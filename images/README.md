@@ -1,3 +1,3 @@
-# Images Placeholder
+# Заглушка для изображений
 
-Real photos, logos and generated media from the university website were removed from this public case. Keep only approved screenshots or neutral sample images here.
+Реальные фотографии, логотипы и сгенерированные медиафайлы сайта университета удалены из публичного кейса. Здесь можно хранить только согласованные скриншоты или нейтральные демонстрационные изображения.

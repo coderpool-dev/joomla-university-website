@@ -1,3 +1,3 @@
-# Documents Placeholder
+# Заглушка для документов
 
-Real downloadable documents from the university website were removed from this public case. Use sample files only when demonstrating upload or download behavior.
+Реальные документы из раздела загрузок сайта университета удалены из публичного кейса. Для демонстрации сценариев скачивания используйте только тестовые файлы.

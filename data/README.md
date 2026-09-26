@@ -1,3 +1,3 @@
-# Data Placeholder
+# Заглушка для данных
 
-Organization documents and generated data files were removed from this public case.
+Документы организации и сгенерированные файлы удалены из публичного кейса.

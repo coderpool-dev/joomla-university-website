@@ -1,31 +1,31 @@
-# ROSNEW Joomla Migration Case
+# Сайт университета на Joomla
 
-Public portfolio version of a university website migration and deployment project.
+Публичная портфолио-версия проекта по переносу и подготовке к развёртыванию сайта университета на Joomla.
 
-This repository is a sanitized case study. It keeps the technical structure needed to discuss the work, while removing production data, database dumps, secrets, admin logs, cache files, uploaded documents, and media assets owned by the organization.
+Репозиторий очищен для публикации: в нём сохранена техническая структура проекта, но удалены боевые данные, дампы базы, секреты, журналы администратора, кэш, загруженные документы и медиафайлы организации.
 
-## Scope
+## Что было сделано
 
-- migrated and prepared a Joomla-based university website for deployment;
-- configured PHP-FPM, nginx, MySQL, caching and clean URLs;
-- preserved public content structure during migration;
-- prepared installation notes and deployment configuration;
-- removed private data and organization-owned files from the public version.
+- подготовлен и перенесён сайт университета на Joomla;
+- настроены PHP-FPM, nginx, MySQL, кэширование и ЧПУ;
+- сохранена структура публичных разделов сайта при миграции;
+- подготовлены заметки по установке и пример конфигурации для развёртывания;
+- из публичной версии удалены приватные данные и файлы организации.
 
-## What Is Removed
+## Что удалено из публичной версии
 
-- `configuration.php` with database credentials and Joomla secret;
-- SQL backups and installation archives;
-- user uploads, public documents, photos, schedules and scans;
-- cache, temporary files and logs;
-- admin-only data and environment-specific paths.
+- `configuration.php` с доступами к базе данных и секретом Joomla;
+- SQL-бэкапы и установочные архивы;
+- пользовательские загрузки, документы, фотографии, расписания и сканы;
+- кэш, временные файлы и логи;
+- данные админки и пути, завязанные на конкретное окружение.
 
-## Public Placeholders
+## Заглушки
 
-The folders `images`, `download`, `upload`, `uploads`, `data`, `files` and `virtual-tours` contain placeholders instead of real files. In the production project these folders contained public website materials owned or published by the university.
+Папки `images`, `download`, `upload`, `uploads`, `data`, `files` и `virtual-tours` оставлены только как заглушки. В рабочем проекте там находились публичные материалы сайта, принадлежащие или опубликованные университетом.
 
-## Deployment
+## Развёртывание
 
-Use `configuration.example.php` as a safe template for local setup. Real credentials, domain names and secrets must be provided through an environment-specific configuration file that is never committed.
+Файл `configuration.example.php` можно использовать как безопасный шаблон для локальной настройки. Реальные доступы, домены и секреты должны храниться в отдельном `configuration.php`, который не коммитится в репозиторий.
 
-The project was originally deployed with nginx, PHP-FPM and MySQL. A sanitized nginx example can be added under `deploy/` when needed.
+Проект разворачивался на связке nginx, PHP-FPM и MySQL. Обезличенный пример nginx-конфига и краткие заметки по установке лежат в папке `deploy`.

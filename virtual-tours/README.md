@@ -1,3 +1,3 @@
-# Virtual Tours Placeholder
+# Заглушка для виртуальных туров
 
-Original virtual tour assets were removed from this public case.
+Оригинальные материалы виртуальных туров удалены из публичного кейса.

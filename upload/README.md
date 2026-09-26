@@ -1,3 +1,3 @@
-# Upload Placeholder
+# Заглушка для загрузок
 
-Real uploaded files were removed from this public case.
+Реальные загруженные файлы удалены из публичного кейса.

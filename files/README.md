@@ -1,3 +1,3 @@
-# Files Placeholder
+# Заглушка для файлов
 
-Organization files were removed from this public case.
+Файлы организации удалены из публичного кейса.
