@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="module" client="administrator" method="upgrade" version="4.3">
+    <name>mod_jchmodeswitcher</name>
+    <description>MOD_JCHMODESWITCHER_DESCRIPTION</description>
+    <version>9.2.5</version>
+    <creationDate>2026-01-17</creationDate>
+    <author>Samuel Marshall</author>
+    <authorUrl>https://www.jch-optimize.net</authorUrl>
+    <variant>PRO</variant>
+    <copyright>Copyright (C) 2021 Samuel Marshall/JCH Optimize, All rights reserved.</copyright>
+    <license>GNU/GPLv3 https://www.gnu.org/licenses/gpl-3.0.html</license>
+    <namespace path="src">CodeAlfa\Module\JchModeSwitcher</namespace>
+    <files>
+        <folder module="mod_jchmodeswitcher">services</folder>
+        <folder>src</folder>
+        <folder>tmpl</folder>
+    </files>
+    <scriptfile>script.install.php</scriptfile>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/mod_jchmodeswitcher.ini</language>
+        <language tag="en-GB">en-GB/mod_jchmodeswitcher.sys.ini</language>
+    </languages>
+
+    <media destination="mod_jchmodeswitcher" folder="media">
+        <folder>css</folder>
+        <file>joomla.asset.json</file>
+    </media>
+</extension>

@@ -1,0 +1,75 @@
+/**
+ * JCH Optimize - Performs several front-end optimizations for fast downloads
+ *
+ * @package   jchoptimize/joomla-platform
+ * @author    Samuel Marshall <samuel@jch-optimize.net>
+ * @copyright Copyright (c) 2020 Samuel Marshall / JCH Optimize
+ * @license   GNU/GPLv3, or later. See LICENSE file
+ *
+ * If LICENSE file missing, see <http://www.gnu.org/licenses/>.
+ */
+
+
+div#attrib-basic_options > div.well.well-small:nth-child(2) > div:nth-child(2) > div.control-group:nth-child(5) {
+    display: none !important;
+}
+
+
+#jform_pro_downloadid {
+    min-width: 250px;
+}
+
+fieldset[id^=jform_staticfiles],
+fieldset[id^=jform_pro_staticfiles],
+fieldset[id^=jform_pro_http2_file_types] {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    width: 300px;
+}
+
+fieldset[id^=jform_staticfiles],
+fieldset[id^=jform_pro_staticfiles] {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+fieldset[id^=jform_pro_http2_file_types] {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+fieldset[id^=jform_staticfiles] ul,
+fieldset[id^=jform_pro_staticfiles] ul,
+fieldset[id^=jform_pro_http2_file_types] ul {
+    margin: 0;
+}
+
+fieldset[id^=jform_staticfiles] ul li,
+fieldset[id^=jform_pro_staticfiles] ul li,
+fieldset[id^=jform_pro_http2_file_types] ul li {
+    display: inline-table;
+    width: 20%;
+}
+
+fieldset[id^=jform_staticfiles] label,
+fieldset[id^=jform_pro_staticfiles] label,
+fieldset[id^=jform_pro_http2_file_types] label {
+    display: inline-table;
+    width: 12%;
+}
+
+#j-main-container {
+    padding-top: 1rem !important;
+}
+
+form#adminForm .page-cache-url {
+    max-width: 650px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+#optimize-images-modal-container .modal-dialog {
+    max-width: 75% !important;
+}

@@ -1,0 +1,70 @@
+
+/**
+ * JCH Optimize - Performs several front-end optimizations for fast downloads
+ *
+ *  @package   jchoptimize/core
+ *  @author    Samuel Marshall <samuel@jch-optimize.net>
+ *  @copyright Copyright (c) 2023 Samuel Marshall / JCH Optimize
+ *  @license   GNU/GPLv3, or later. See LICENSE file
+ *
+ *  If LICENSE file missing, see <http://www.gnu.org/licenses/>.
+ */
+
+.jch-modeswitcher .notification-icon{
+    background-color: var(--template-bg-light);
+}
+
+.jch-modeswitcher .notification-icon.production{
+    color: var(--success);
+}
+
+.jch-modeswitcher .notification-icon.development{
+    color: var(--danger);
+}
+
+.jch-modeswitcher .notification-icon.page-cache-disabled{
+    color: var(--gray-500);
+}
+
+.jch-modeswitcher .notification-icon.page-cache-only{
+    color: var(--warning);
+}
+
+.jch-modeswitcher .jch-card-wrapper {
+    background-color: var(--dropdown-item-bg, var(--template-bg-dark-70));
+    color: #fff;
+    border-block-start: 1px solid #0000001a;
+    border-block-end: var(--dropdown-item-border-bottom, 1px solid rgba(0,0,0, .10));
+}
+
+.jch-card-wrapper + .dropdown-item {
+    border-block-start: 1px solid #0000001a;
+}
+
+.jch-modeswitcher .jch-cache-card {
+    border-radius: .5rem;
+    font-size: .75rem;
+    background-color: var(--dropdown-item-bg-hvr, var(--template-bg-dark));
+}
+
+.jch-modeswitcher .jch-cache-card-title {
+    font-weight: 600;
+    font-size: .78rem;
+}
+
+.jch-modeswitcher .jch-cache-metric-label {
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.jch-modeswitcher .jch-cache-metric-value {
+    font-size: .85rem;
+    margin-top: .1rem;
+    min-height: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.jch-modeswitcher .jch-cache-metric-value img {
+    max-height: 12px;
+}

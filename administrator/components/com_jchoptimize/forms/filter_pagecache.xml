@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="filter">
+        <field name="search"
+               type="text"
+               inputmode="search"
+               label="COM_JCHOPTIMIZE_FILTER_SEARCH_LABEL"
+               description="COM_JCHOPTIMIZE_FILTER_SEARCH_DESC"
+               hint="JSEARCH_FILTER"
+        />
+        <field name="time-1"
+               type="list"
+               label="COM_JCHOPTIMIZE_TIME1"
+               class="js-select-submit-on-change"
+        >
+            <option value="">COM_JCHOPTIMIZE_SELECT_TIME1</option>
+            <option value="900">COM_JCHOPTIMIZE_GTE_15MIN_AGO</option>
+            <option value="1800">COM_JCHOPTIMIZE_GTE_30MINS_AGO</option>
+            <option value="3600">COM_JCHOPTIMIZE_GTE_1HOUR_AGO</option>
+            <option value="10800">COM_JCHOPTIMIZE_GTE_3HOURS_AGO</option>
+            <option value="21600">COM_JCHOPTIMIZE_GTE_6HOURS_AGO</option>
+            <option value="43200">COM_JCHOPTIMIZE_GTE_12HOURS_AGO</option>
+            <option value="86400">COM_JCHOPTIMIZE_GTE_1DAY_AGO</option>
+            <option value="172800">COM_JCHOPTIMIZE_GTE_2DAYS_AGO</option>
+            <option value="604800">COM_JCHOPTIMIZE_GTE_1WEEK_AGO</option>
+            <option value="1209600">COM_JCHOPTIMIZE_GTE_2WEEKS_AGO</option>
+        </field>
+        <field name="time-2"
+               type="list"
+               label="COM_JCHOPTIMIZE_TIME2"
+               class="js-select-submit-on-change"
+        >
+            <option value="">COM_JCHOPTIMIZE_SELECT_TIME2</option>
+            <option value="900">COM_JCHOPTIMIZE_LT_15MIN_AGO</option>
+            <option value="1800">COM_JCHOPTIMIZE_LT_30MINS_AGO</option>
+            <option value="3600">COM_JCHOPTIMIZE_LT_1HOUR_AGO</option>
+            <option value="10800">COM_JCHOPTIMIZE_LT_3HOURS_AGO</option>
+            <option value="21600">COM_JCHOPTIMIZE_LT_6HOURS_AGO</option>
+            <option value="43200">COM_JCHOPTIMIZE_LT_12HOURS_AGO</option>
+            <option value="86400">COM_JCHOPTIMIZE_LT_1DAY_AGO</option>
+            <option value="172800">COM_JCHOPTIMIZE_LT_2DAYS_AGO</option>
+            <option value="604800">COM_JCHOPTIMIZE_LT_1WEEK_AGO</option>
+            <option value="1209600">COM_JCHOPTIMIZE_LT_2WEEKS_AGO</option>
+        </field>
+        <field name="device"
+               type="list"
+               label="COM_JCHOPTIMIZE_DEVICE"
+               class="js-select-submit-on-change"
+        >
+            <option value="">COM_JCHOPTIMIZE_SELECT_DEVICE</option>
+            <option value="Mobile">COM_JCHOPTIMIZE_MOBILE</option>
+            <option value="Desktop">COM_JCHOPTIMIZE_DESKTOP</option>
+        </field>
+        <field name="adapter"
+               type="list"
+               label="COM_JCHOPTIMIZE_ADAPTER"
+               class="js-select-submit-on-change"
+        >
+            <option value="">COM_JCHOPTIMIZE_SELECT_ADAPTER</option>
+            <option value="Filesystem">COM_JCHOPTIMIZE_FILESYSTEM</option>
+            <option value="Redis">COM_JCHOPTIMIZE_REDIS</option>
+            <option value="Apcu">COM_JCHOPTIMIZE_APCU</option>
+            <option value="Memcached">COM_JCHOPTIMIZE_MEMCACHED</option>
+        </field>
+        <field name="http-request"
+               type="list"
+               label="COM_JCHOPTIMIZE_HTTP_REQUEST"
+               class="js-select-submit-on-change"
+        >
+            <option value="">COM_JCHOPTIMIZE_SELECT_HTTP_REQUEST</option>
+            <option value="yes">JYES</option>
+            <option value="no">JNO</option>
+        </field>
+    </fields>
+    <fields name="list">
+        <field name="fullordering"
+               type="list"
+               label="JGLOBAL_SORT_BY"
+               class="js-select-submit-on-change"
+               default="mtime ASC"
+               validate="options"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="mtime ASC">COM_JCHOPTIMIZE_MTIME_ASC</option>
+            <option value="mtime DESC">COM_JCHOPTIMIZE_MTIME_DESC</option>
+            <option value="url ASC">COM_JCHOPTIMIZE_URL_ASC</option>
+            <option value="url DESC">COM_JCHOPTIMIZE_URL_DESC</option>
+            <option value="device ASC">COM_JCHOPTIMIZE_DEVICE_ASC</option>
+            <option value="device DESC">COM_JCHOPTIMIZE_DEVICE_DESC</option>
+            <option value="adapter ASC">COM_JCHOPTIMIZE_ADAPTER_ASC</option>
+            <option value="adapter DESC">COM_JCHOPTIMIZE_ADAPTER_DESC</option>
+            <option value="http-request ASC">COM_JCHOPTIMIZE_HTTP_REQUEST_ASC</option>
+            <option value="http-request DESC">COM_JCHOPTIMIZE_HTTP_REQUEST_DESC</option>
+            <option value="id ASC">COM_JCHOPTIMIZE_ID_ASC</option>
+            <option value="id DESC">COM_JCHOPTIMIZE_ID_DESC</option>
+        </field>
+        <field name="limit"
+               type="limitbox"
+               label="JGLOBAL_LIST_LIMIT"
+               default="25"
+               class="js-select-submit-on-change"
+        />
+    </fields>
+</form>

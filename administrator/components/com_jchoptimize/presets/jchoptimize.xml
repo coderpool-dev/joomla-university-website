@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+  JCH Optimize - Performs several front-end optimizations for fast downloads
+
+   @package   jchoptimize/core
+   @author    Samuel Marshall <samuel@jch-optimize.net>
+   @copyright Copyright (c) 2024 Samuel Marshall / JCH Optimize
+   @license   GNU/GPLv3, or later. See LICENSE file
+
+   If LICENSE file missing, see <http://www.gnu.org/licenses/>.
+  -->
+<menu
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="urn:joomla.org"
+        xsi:schemaLocation="urn:joomla.org menu.xsd"
+>
+    <menuitem type="heading"
+              title="COM_JCHOPTIMIZE_PRESET_MENUS_NAVIGATION"
+              icon="none fa fa-bars"
+    >
+        <menuitem type="component"
+                  title="COM_JCHOPTIMIZE_PRESET_OPTIMIZE_IMAGES"
+                  element="com_jchoptimize"
+                  link="index.php?option=com_jchoptimize&amp;view=OptimizeImages"
+                  permission="core.manage;com_jchoptimize"
+        />
+        <menuitem type="component"
+                  title="COM_JCHOPTIMIZE_PRESET_PAGE_CACHE"
+                  element="com_jchoptimize"
+                  link="index.php?option=com_jchoptimize&amp;view=PageCache"
+                  permission="core.manage;com_jchoptimize"
+        />
+    </menuitem>
+    <menuitem type="heading"
+              title="COM_JCHOPTIMIZE_PRESET_MENUS_CONFIG"
+              icon="none fa fa-wrench"
+    >
+        <menuitem type="component"
+                  title="COM_JCHOPTIMIZE_PRESET_COMPONENT_SETTINGS"
+                  element="com_config"
+                  link="index.php?option=com_config&amp;view=component&amp;component=com_jchoptimize"
+                  permission="core.manage;com_paddlesubs"
+        />
+    </menuitem>
+</menu>

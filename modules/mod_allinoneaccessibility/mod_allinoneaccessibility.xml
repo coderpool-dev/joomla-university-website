@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="4.0" method="upgrade" client="site">
+	<name>All in One Accessibility®</name>
+	<author>Skynet Technologies USA LLC.</author>
+	<creationDate>December 2025</creationDate>
+	<copyright>Copyright (c) 2025 skynettechnologies.com</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>hello@skynettechnologies.com</authorEmail>
+	<authorUrl>https://www.skynettechnologies.com</authorUrl>
+	<version>1.7.0</version>
+	<updateservers>
+		<server type="plugin" priority="1" name="All in One Accessibility">https://www.skynettechnologies.com/add-ons/reports/setup/joomla/mod_allinoneaccessibility.xml</server>
+	</updateservers>
+	<description>
+		<![CDATA[
+		<br>
+		All in One Accessibility widget improves Joomla website ADA compliance and browser experience for ADA, WCAG 2.1 & 2.2, Section 508, California Unruh Act, Australian DDA, European EAA EN 301 549, UK Equality Act (EA), Israeli Standard 5568, Ontario AODA, Canada ACA, German BITV, France RGAA, Brazilian Inclusion Law (LBI 13.146/2015), Spain UNE 139803:2012, JIS X 8341 (Japan), Italian Stanca Act and Switzerland DDA Standards.
+		<br>
+		<br>
+		1. Navigate to Extensions -> Modules, Press 'New' and choose 'All in One Accessibility' module from the list.
+		   Open All in One Accessibility module settings.
+		<br>
+		2. Sign up for 10 days free trial and get widget settings:
+		3. Set other module settings to:
+			<ul>
+				<li>Status: <i>Published</i>.</li>
+				<li>Position: choose <i>Top</i> or <i>Footer</i>.</li>
+				<li>Menu assignment -> Module Assignment: <i>On all pages</i>.</li>
+			</ul>
+		<iframe src="../modules/mod_allinoneaccessibility/index.html" style="width:100%; height:1100px; border:0;"></iframe>
+		]]>
+	</description>
+	<files>
+		<filename>mod_allinoneaccessibility.xml</filename>
+		<filename module="mod_allinoneaccessibility">mod_allinoneaccessibility.php</filename>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+	</files>
+	<positions>
+		<position>footer</position>
+	</positions>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="layout" type="hidden" default="output" />
+				<field name="containerArea" type="note" label="" description="&lt;div width='80%' height='1000px' class='cst-container'&gt;	&lt;/div&gt;"/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

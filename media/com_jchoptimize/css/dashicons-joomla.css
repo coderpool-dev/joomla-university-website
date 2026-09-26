@@ -1,0 +1,47 @@
+/**
+ * JCH Optimize - Performs several front-end optimizations for fast downloads
+ *
+ *  @package   jchoptimize/core
+ *  @author    Samuel Marshall <samuel@jch-optimize.net>
+ *  @copyright Copyright (c) 2024 Samuel Marshall / JCH Optimize
+ *  @license   GNU/GPLv3, or later. See LICENSE file
+ *
+ *  If LICENSE file missing, see <http://www.gnu.org/licenses/>.
+ */
+
+.jch-dash-icons .dashicon-wrapper {
+    --jch-dashicon-border-color: hsl(var(--hue), 50%, 93%);
+}
+
+.jch-dash-icons .dashicon-wrapper .dashicon {
+    --jch-dashicon-text-color: hsl(var(--hue), 30%, 40%);
+    --jch-dashicon-bg-color: hsl(var(--hue), 60%, 97%);
+    --jch-dashicon-icon-color: hsl(var(--hue), 30%, 40%);
+    --jch-dashicon-bg-color-hvr: var(--template-bg-dark);
+}
+
+.jch-dash-icons .dashicon-wrapper.success .dashicon {
+    --jch-dashicon-text-color: var(--success);
+    --jch-dashicon-bg-color: #f3f9f3;
+    --jch-dashicon-icon-color: #55a258;
+    --jch-dashicon-bg-color-hvr: var(--success);
+}
+
+.jch-dash-icons .dashicon-wrapper.danger .dashicon {
+    --jch-dashicon-text-color: var(--danger);
+    --jch-dashicon-bg-color: #f4f0f0;
+    --jch-dashicon-icon-color: #ce8484;
+    --jch-dashicon-bg-color-hvr: var(--danger);
+}
+
+.jch-dash-icons .dashicon-wrapper.warning .dashicon {
+    --jch-dashicon-text-color: #996900;
+    --jch-dashicon-bg-color: #fffcf4;
+    --jch-dashicon-icon-color: #ffb514;
+    --jch-dashicon-bg-color-hvr: #996900;
+}
+
+[data-color-scheme="light"] .jch-dash-icons-switcher .form-check-input:checked {
+    background-color: hsl(var(--hue), 30%, 40%);
+    border-color: hsl(var(--hue), 30%, 40%);
+}

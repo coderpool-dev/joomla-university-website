@@ -1,0 +1,18 @@
+
+#bulk-settings-modal-container .modal-dialog {
+    max-width: 800px !important;
+}
+
+#bulk-settings-modal-container.modal.hide.fade {
+    max-width: 800px !important;
+    left: 65%;
+}
+
+#bulk-settings-modal-container.modal.hide.fade .modal-body {
+    padding: 20px;
+    width: 760px !important;
+}
+
+#bulk-settings-modal-container .modal-header .close {
+    line-height: 1rem !important;
+}

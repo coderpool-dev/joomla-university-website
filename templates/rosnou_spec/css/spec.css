@@ -1,0 +1,80 @@
+body {
+    font-size: 20px;
+}
+
+.navbar {
+    border: 1px solid #000;
+}
+.navbar-default{
+    background-color: #fff;
+}
+.nav-tabs li{
+    max-width:190px;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
+    border: 1px solid #000;
+}
+.nav-tabs {
+    border-bottom: 3px solid #000;
+}
+
+.delimiter {
+    clear: both;
+    margin: 10px 0;
+}
+
+/*.contentheading*/
+/*{*/
+    /*background: -moz-linear-gradient(left center , #4F80FF 0%, #FFFFFF 70%) repeat fixed 0 0 transparent!*#D3E5F9*! !*url("../images/component_heading.png") repeat-x scroll 0 0*! ;*/
+    /*background: -webkit-gradient(linear, left top, left right, color-stop(0%,#4F80FF), color-stop(70%,#FFFFFF)); !* Chrome,Safari4+ *!*/
+    /*background: -webkit-linear-gradient(left, #4F80FF 0%, #FFFFFF 70%); !* Chrome10+,Safari5.1+ *!*/
+    /*background: -o-linear-gradient(left, #4F80FF 0%, #FFFFFF 70%); !* Opera11.10+ *!*/
+    /*background: -ms-linear-gradient(left, #4F80FF 0%, #FFFFFF 70%); !* IE10+ *!*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4F80FF', endColorstr='#FFFFFF',GradientType=1 ); !* IE6-9 *!*/
+    /*background: linear-gradient(left, #4F80FF 0%, #FFFFFF 70%); !* W3C *!*/
+    /*width: 100%;*/
+    /*border-bottom: none;							!*нижний бордюр заголовка*!*/
+
+    /*color: #173E85!*#3C6FAD*!;										!*цвет заголовка контента на главной*!*/
+    /*-moz-border-radius: 4px;*/
+    /*border-radius: 4px;*/
+    /*-webkit-border-radius: 4px;*/
+    /*!*font-size: small;*!*/
+
+    /*font-weight: bold;*/
+    /*padding-left: 10px;*/
+/*}*/
+
+img{
+    margin-right: 10px;
+}
+
+.table{
+    border:1px solid #000;
+}
+
+.contentpaneopen{
+    margin: 10px 0;
+}
+
+.contentheading{
+    color: #000;
+    background-color: #579ED8;
+    border-radius: 4px;
+    padding: 5px;
+
+}
+table tr th {
+    border: 2px solid #000;
+    font-weight: bold;
+}
+
+.counters{
+display: block;
+position: relative;
+float:left;
+margin: 0 10px;
+}
+.counters div {
+float:left;
+}

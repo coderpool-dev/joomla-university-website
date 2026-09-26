@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@picocss/pico": "^2.0.6",
+    "bootstrap": "^5.3.3",
+    "bulma": "^1.0.0",
+    "foundation-sites": "^6.8.1",
+    "uikit": "^3.19.4",
+    "vanilla-framework": "^4.10.0"
+  }
+}

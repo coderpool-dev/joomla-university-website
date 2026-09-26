@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  JCH Optimize - Performs several front-end optimizations for fast downloads
+
+   @package   jchoptimize/core
+   @author    Samuel Marshall <samuel@jch-optimize.net>
+   @copyright Copyright (c) 2024 Samuel Marshall / JCH Optimize
+   @license   GNU/GPLv3, or later. See LICENSE file
+
+   If LICENSE file missing, see <http://www.gnu.org/licenses/>.
+  -->
+
+<extension type="module" client="administrator" method="upgrade" version="4.2">
+    <name>mod_jchsupportinfo</name>
+    <description>MOD_JCHSUPPORTINFO_DESCRIPTION</description>
+    <version>9.2.5</version>
+    <creationDate>2026-01-17</creationDate>
+    <author>Samuel Marshall</author>
+    <authorUrl>https://www.jch-optimize.net</authorUrl>
+    <variant>PRO</variant>
+    <copyright>Copyright (C) 2025 Samuel Marshall/JCH Optimize Inc., All rights reserved.</copyright>
+    <license>GNU/GPLv3 https://www.gnu.org/licenses/gpl-3.0.html</license>
+    <namespace path="src">CodeAlfa\Module\JchSupportInfo</namespace>
+    <files>
+        <folder module="mod_jchsupportinfo">services</folder>
+        <folder>src</folder>
+        <folder>tmpl</folder>
+    </files>
+    <scriptfile>script.install.php</scriptfile>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/mod_jchsupportinfo.ini</language>
+        <language tag="en-GB">en-GB/mod_jchsupportinfo.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="header_icon"
+                    type="text"
+                    label="MOD_JCHSUPPORTINFO_HEADER_ICON_LABEL"
+                    default="none fa fa-ticket"
+                    />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

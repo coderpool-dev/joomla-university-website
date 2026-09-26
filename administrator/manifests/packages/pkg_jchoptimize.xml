@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="3.10" method="upgrade">
+    <name>pkg_jchoptimize</name>
+    <author>Samuel Marshall</author>
+    <creationDate>2026-01-17</creationDate>
+    <packagename>jchoptimize</packagename>
+    <version>9.2.5</version>
+    <url>https://www.jch-optimize.net</url>
+    <packager>JCH Optimize</packager>
+    <description>JCH Optimize installation package version 9.2.5</description>
+    <variant>FREE</variant>
+    <files>
+        <file type="component" client="administrator" id="com_jchoptimize">com_jchoptimize-core.zip</file>
+        <file type="plugin" id="jchoptimize" group="system">plg_system_jchoptimize.zip</file>
+        <file type="plugin" id="jchpagecache" group="system">plg_system_jchpagecache.zip</file>
+        <file type="module" id="mod_jchmodeswitcher" client="administrator">mod_jchmodeswitcher.zip</file>
+        <file type="module" id="mod_jchdashicons" client="administrator">mod_jchdashicons.zip</file>
+        <file type="module" id="mod_jchsupportinfo" client="administrator">mod_jchsupportinfo.zip</file>
+    </files>
+    <scriptfile>script.jchoptimize.php</scriptfile>
+    <updateservers>
+        <server type="extension" priority="1" name="JCH Optimize Updates">https://updates.jch-optimize.net/joomla-core.xml</server>
+    </updateservers>
+</extension>

@@ -1,0 +1,1727 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<config>
+    <!-- ##### BASIC -->
+    <fieldset name="basic" addfieldprefix="CodeAlfa\Component\JchOptimize\Administrator\Field"
+              label="COM_JCHOPTIMIZE_GENERAL_FIELDSET_LABEL"
+    >
+        <!--
+        Miscellaneous
+        -->
+        <fieldset name="group_basic_misc"
+                  label="COM_JCHOPTIMIZE_GROUP_MISC_LABEL"
+        >
+            <field name="ajax"
+                   type="ajax">
+            </field>
+            <!--<procode>-->
+            <field name="hidden_api_secret"
+                   type="hidden"
+                   default="0aad0284"
+            >
+            </field>
+            <!--</procode>-->
+            <field name="cache_random_key"
+                   type="hidden"
+                   default=""
+            >
+            </field>
+            <field name="debug"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_DEBUG_LABEL"
+                   description="COM_JCHOPTIMIZE_DEBUG_DESCRIPTION">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="disable_logged_in_users"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="1"
+                   label="COM_JCHOPTIMIZE_DISABLELOGGEDINUSERS_LABEL"
+                   description="COM_JCHOPTIMIZE_DISABLELOGGEDINUSERS_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+        <fieldset name="group_elements_above_the_fold" label="COM_JCHOPTIMIZE_NUMBERELEMENTS_ABOVEFOLD_LABEL"
+                  description="COM_JCHOPTIMIZE_NUMBERELEMENTS_ABOVEFOLD_DESC"
+        >
+            <field name="elements_above_fold_home"
+                   type="text"
+                   label="COM_JCHOPTIMIZE_NUMBER_ELEMENTS_ABOVE_FOLD_HOME_LABEL"
+                   description="COM_JCHOPTIMIZE_NUMBER_ELEMENTS_ABOVE_FOLD_HOME_DESC"
+                   default="">
+            </field>
+            <field name="elements_above_fold"
+                   type="text"
+                   label="COM_JCHOPTIMIZE_ELEMENTS_ABOVE_FOLD_DEFAULT_LABEL"
+                   description="COM_JCHOPTIMIZE_ELEMENTS_ABOVE_FOLD_DEFAULT_DESC"
+                   default="300"
+            />
+            <field name="elements_above_fold_per_page"
+                   type="JchMultiSelectWithOptions"
+                   data-jch_type="url"
+                   data-jch_group="file"
+                   label="COM_JCHOPTIMIZE_ELEMENTS_ABOVE_FOLD_PER_PAGE_LABEL"
+                   description="COM_JCHOPTIMIZE_ELEMENTS_ABOVE_FOLD_PER_PAGE_DESC"
+            >
+                <subfield name="elements"
+                          type="text"
+                          default="300"
+                          class="form-control form-control-sm"
+                />
+            </field>
+            <field name="elements_above_fold_marker"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_ELEMENTS_ABOVEFOLD_MARKER_LABEL"
+                   description="COM_JCHOPTIMIZE_ELEMENTS_ABOVEFOLD_MARKER_DESC"
+                   showon="debug:1"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+        <!--
+        Exclude Menu items
+        -->
+        <fieldset name="group_advanced_menuselect"
+                  label="COM_JCHOPTIMIZE_GROUP_MENUSELECT_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_MENUSELECT_DESC"
+        >
+            <field name="menuexcludedurl"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="url"
+                   data-jch_group="class"
+                   label="COM_JCHOPTIMIZE_MENUEXCLUDEDURL_LABEL"
+                   description="COM_JCHOPTIMIZE_MENUEXCLUDEDURL_DESC"
+            >
+            </field>
+            <field name="menuexcluded"
+                   type="menuitem"
+                   label="COM_JCHOPTIMIZE_MENUSELECTION_LABEL"
+                   description="COM_JCHOPTIMIZE_MENUSELECTION_DESC"
+                   multiple="multiple"
+                   layout="joomla.form.field.groupedlist-fancy-select"
+            >
+            </field>
+        </fieldset>
+        <!--
+        Cache storage
+        -->
+        <fieldset name="group_cache_storage"
+                  label="COM_JCHOPTIMIZE_GROUP_CACHE_STORAGE_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_CACHE_STORAGE_DESC"
+        >
+            <field name="pro_cache_storage_adapter"
+                   type="proonlyjchcachehandler"
+                   default="filesystem"
+                   label="COM_JCHOPTIMIZE_CACHE_STORAGE_LABEL"
+                   description="COM_JCHOPTIMIZE_CACHE_STORAGE_DESC"
+            >
+            </field>
+            <field name="memcached_server_host"
+                   type="proonlytext"
+                   default="127.0.0.1"
+                   label="COM_JCHOPTIMIZE_MEMCACHED_SERVER_HOST_LABEL"
+                   description="COM_JCHOPTIMIZE_MEMCACHED_SERVER_HOST_DESC"
+                   showon="pro_cache_storage_adapter:memcached">
+            </field>
+            <field name="memcached_server_port"
+                   type="proonlytext"
+                   default="11211"
+                   label="COM_JCHOPTIMIZE_MEMCACHED_SERVER_PORT_LABEL"
+                   description="COM_JCHOPTIMIZE_MEMCACHED_SERVER_PORT_DESC"
+                   showon="pro_cache_storage_adapter:memcached">
+            </field>
+            <field name="redis_server_host"
+                   type="proonlytext"
+                   default="127.0.0.1"
+                   label="COM_JCHOPTIMIZE_REDIS_SERVER_HOST_LABEL"
+                   description="COM_JCHOPTIMIZE_REDIS_SERVER_HOST_DESC"
+                   showon="pro_cache_storage_adapter:redis">
+            </field>
+            <field name="redis_server_port"
+                   type="proonlytext"
+                   default="6379"
+                   label="COM_JCHOPTIMIZE_REDIS_SERVER_PORT_LABEL"
+                   description="COM_JCHOPTIMIZE_REDIS_SERVER_PORT_DESC"
+                   showon="pro_cache_storage_adapter:redis">
+            </field>
+            <field name="redis_server_password"
+                   type="password"
+                   label="COM_JCHOPTIMIZE_REDIS_SERVER_PASSWORD_LABEL"
+                   description="COM_JCHOPTIMIZE_REDIS_SERVER_PASSWORD_DESC"
+                   showon="pro_cache_storage_adapter:redis">
+            </field>
+            <field name="redis_server_database"
+                   type="proonlytext"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_REDIS_DATABASE_LABEL"
+                   description="COM_JCHOPTIMIZE_REDIS_DATABASE_DESC"
+                   showon="pro_cache_storage_adapter:redis">
+            </field>
+            <field name="cache_lifetime"
+                   type="list"
+                   default="900"
+                   label="COM_JCHOPTIMIZE_CACHE_LIFETIME_LABEL"
+                   description="COM_JCHOPTIMIZE_CACHE_LIFETIME_DESCRIPTION">
+                <option value="900">COM_JCHOPTIMIZE_15_MIN</option>
+                <option value="1800">COM_JCHOPTIMIZE_30_MIN</option>
+                <option value="3600">COM_JCHOPTIMIZE_1_HOUR</option>
+                <option value="10800">COM_JCHOPTIMIZE_3_HOURS</option>
+                <option value="21600">COM_JCHOPTIMIZE_6_HOURS</option>
+                <option value="43200">COM_JCHOPTIMIZE_12_HOURS</option>
+                <option value="86400">COM_JCHOPTIMIZE_1_DAY</option>
+                <option value="172800">COM_JCHOPTIMIZE_2_DAYS</option>
+                <option value="604800">COM_JCHOPTIMIZE_7_DAYS</option>
+                <option value="1209600">COM_JCHOPTIMIZE_2_WEEKS</option>
+            </field>
+            <field name="delete_expiry"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_DELETE_EXPIRY_LABEL"
+                   description="COM_JCHOPTIMIZE_DELETE_EXPIRY_DESCRIPTION"
+                   default="1">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+        <!--
+        Recache settings
+        -->
+        <fieldset name="group_recache_settings"
+                  label="COM_JCHOPTIMIZE_GROUP_RECACHE_SETTINGS_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_RECACHE_SETTINGS_DESC"
+        >
+            <field name="recache_base_url"
+                   type="proonlytext"
+                   label="COM_JCHOPTIMIZE_RECACHE_BASE_URL_LABEL"
+                   description="COM_JCHOPTIMIZE_RECACHE_BASE_URL_DESC"
+            />
+            <field name="recache_crawl_limit"
+                   type="proonlytext"
+                   label="COM_JCHOPTIMIZE_RECACHE_CRAWL_LIMIT_LABEL"
+                   description="COM_JCHOPTIMIZE_RECACHE_CRAWL_LIMIT_DESC"
+                   default="100"
+            />
+            <field name="recache_concurrency"
+                   type="proonlytext"
+                   label="COM_JCHOPTIMIZE_RECACHE_CONCURRENCY_LABEL"
+                   description="COM_JCHOPTIMIZE_RECACHE_CONCURRENCY_DESC"
+                   default="10"
+            />
+            <field name="recache_max_depth"
+                   type="proonlytext"
+                   label="COM_JCHOPTIMIZE_RECACHE_MAX_DEPTH_LABEL"
+                   description="COM_JCHOPTIMIZE_RECACHE_MAX_DEPTH_DESC"
+                   default="3"
+            />
+        </fieldset>
+
+    </fieldset>
+    <!-- ##### Optimize Files -->
+    <fieldset name="optimize_files" label="COM_JCHOPTIMIZE_OPTIMIZE_FILES_FIELDSET_LABEL">
+        <fieldset name="group_optimize_files"
+                  label="COM_JCHOPTIMIZE_GROUP_OPTIMIZE_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_OPTIMIZE_DESC"
+        >
+            <field name="combine_files_enable"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_ENABLE"
+                   default="1">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="combine_files"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_COMBINE_FILES_LABEL"
+                   description="COM_JCHOPTIMIZE_COMBINE_FILES_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="try_catch"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_TRY_CATCH_LABEL"
+                   description="COM_JCHOPTIMIZE_TRY_CATCH_DESCRIPTION"
+                   default="1">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="html_minify_level"
+                   type="list"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_MINIFY_LEVEL_LABEL"
+                   description="COM_JCHOPTIMIZE_MINIFY_LEVEL_DESCRIPTION">
+                <option value="0">COM_JCHOPTIMIZE_MINIFY_LEVEL_BASIC</option>
+                <option value="1">COM_JCHOPTIMIZE_MINIFY_LEVEL_ADVANCED</option>
+                <option value="2">COM_JCHOPTIMIZE_MINIFY_LEVEL_ULTRA</option>
+            </field>
+            <field name="htaccess"
+                   type="list"
+                   class="btn-group"
+                   default="2"
+                   label="COM_JCHOPTIMIZE_HTACCESS_LABEL"
+                   description="COM_JCHOPTIMIZE_HTACCESS_DESCRIPTION">
+                <option value="2">COM_JCHOPTIMIZE_STATIC_FILES</option>
+                <option value="0">COM_JCHOPTIMIZE_PHP_NO_HTACCESS</option>
+                <option value="1">COM_JCHOPTIMIZE_PHP_HTACCESS</option>
+                <option value="3">COM_JCHOPTIMIZE_PHP_WITHOUT_OPTIONSSYMLINK</option>
+            </field>
+        </fieldset>
+        <!--
+        Automatic settings
+        -->
+        <fieldset name="group_auto_combine"
+                  label="COM_JCHOPTIMIZE_GROUP_AUTO_OPTIMIZE_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_AUTO_OPTIMIZE_DESC"
+        >
+            <field name="gzip"
+                   type="radio"
+                   class="s1-off s2-on s3-on s4-on s5-on s6-on"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_GZIP_LABEL"
+                   description="COM_JCHOPTIMIZE_GZIP_DESCRIPTION">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="html_minify"
+                   type="radio"
+                   class="s1-off s2-on s3-on s4-on s5-on s6-on"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_COMPRESS_HTML"
+                   description="COM_JCHOPTIMIZE_COMPRESS_HTML_DESCRIPTION">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="includeAllExtensions"
+                   type="radio"
+                   class="s1-off s2-off s3-on s4-on s5-on s6-on"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_EXCLUDE_ALL_EXTENSIONS_LABEL"
+                   description="COM_JCHOPTIMIZE_EXCLUDE_ALL_EXTENSIONS_DESCRIPTION">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="phpAndExternal"
+                   type="radio"
+                   class="s1-off s2-off s3-off s4-on s5-on s6-on"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRO_PHPANDEXTERNAL_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_PHPANDEXTERNAL_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+
+    </fieldset>
+
+    <!-- ##### CSS -->
+    <fieldset name="css" label="COM_JCHOPTIMIZE_CSS_FIELDSET_LABEL">
+        <!--
+        CSS automatic settings
+        -->
+        <fieldset name="group_css_auto"
+                  label="COM_JCHOPTIMIZE_GROUP_CSS_AUTO_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_CSS_AUTO_DESC"
+        >
+            <field name="css"
+                   type="radio"
+                   class="s1-on s2-on s3-on s4-on s5-on s6-on"
+                   layout="joomla.form.field.radio.switcher"
+                   default="1"
+                   label="COM_JCHOPTIMIZE_CSS_LABEL"
+                   description="COM_JCHOPTIMIZE_CSS_DESCRIPTION">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="css_minify"
+                   type="radio"
+                   class="s1-off s2-on s3-on s4-on s5-on s6-on"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_COMPRESS_CSS"
+                   description="COM_JCHOPTIMIZE_COMPRESS_CSS_DESCRIPTION">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="replaceImports"
+                   type="radio"
+                   class="s1-off s2-off s3-off s4-on s5-on s6-on"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRO_REPLACEIMPORTS_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_REPLACEIMPORTS_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="inlineStyle"
+                   type="radio"
+                   class="s1-off s2-off s3-off s4-on s5-on s6-on"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRO_INLINESTYLE_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_INLINESTYLE_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+
+        </fieldset>
+        <!--
+        CSS Exclude
+        -->
+        <fieldset name="group_exclude_css"
+                  label="COM_JCHOPTIMIZE_EXCLUDE_CSS_LABEL"
+                  description="COM_JCHOPTIMIZE_EXCLUDE_CSS_DESC"
+        >
+            <field name="excludeCss"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="css"
+                   data-jch_group="file"
+                   label="COM_JCHOPTIMIZE_EXCLUDE_CSS_LABEL"
+                   description="COM_JCHOPTIMIZE_EXCLUDE_CSS_DESCRIPTION">
+            </field>
+            <field name="excludeCssComponents"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="css"
+                   data-jch_group="extension"
+                   label="COM_JCHOPTIMIZE_EXCLUDE_CSS_COMPONENTS_LABEL"
+                   description="COM_JCHOPTIMIZE_EXCLUDE_CSS_COMPONENTS_DESCRIPTION">
+            </field>
+            <field name="excludeStyles"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="css"
+                   data-jch_group="style"
+                   label="COM_JCHOPTIMIZE_PRO_EXCLUDE_STYLES_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_EXCLUDE_STYLES_DESC">
+            </field>
+            <field name="excludeAllStyles"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRO_EXCLUDEALLSTYLES_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_EXCLUDEALLSTYLES_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+        <fieldset name="group_remove_css_start"
+                  label="COM_JCHOPTIMIZE_REMOVE_CSS_GROUP_LABEL"
+                  description="COM_JCHOPTIMIZE_REMOVE_CSS_GROUP_DESC"
+        >
+            <field name="remove_css"
+                   type="JchMultiSelect"
+                   rows="3"
+                   default=""
+                   cols="20"
+                   data-jch_type="css"
+                   data-jch_group="file"
+                   label="COM_JCHOPTIMIZE_REMOVE_CSS_LABEL"
+                   description="COM_JCHOPTIMIZE_REMOVE_CSS_DESC"
+            >
+            </field>
+        </fieldset>
+        <!--
+        Optimize Css Delivery
+        -->
+        <fieldset name="group_pro_optimizecssdelivery"
+                  label="COM_JCHOPTIMIZE_PRO_OPTIMIZECSSDELIVERY_LABEL"
+                  description="COM_JCHOPTIMIZE_PRO_OPTIMIZECSSDELIVERY_DESC"
+        >
+            <field name="optimizeCssDelivery_enable"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_ENABLE"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="pro_reduce_unused_css"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRO_REDUCE_UNUSED_CSS_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_REDUCE_UNUSED_CSS_DESC"
+                   default="0"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="pro_dynamic_selectors"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="selectors"
+                   data-jch_group="style"
+                   label="COM_JCHOPTIMIZE_PRO_DYNAMIC_SELECTORS_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_DYNAMIC_SELECTORS_DESC"
+                   size="50"
+                   sort="true"
+            >
+            </field>
+            <field name="critical_css_configure_helper"
+                   label="COM_JCHOPTIMIZE_CRITICAL_CSS_CONFIGURE_HELPER_LABEL"
+                   description="COM_JCHOPTIMIZE_CRITICAL_CSS_CONFIGURE_HELPER_DESC"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   showon="debug:1"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+        <!--
+        Custom CSS
+        -->
+        <fieldset name="group_custom_css"
+                  label="COM_JCHOPTIMIZE_GROUP_CUSTOM_CSS_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_CUSTOM_CSS_DESC"
+        >
+            <field name="custom_css_enable"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_ENABLE"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="custom_css"
+                   type="textarea"
+                   label="COM_JCHOPTIMIZE_CUSTOM_CSS_LABEL"
+                   description="COM_JCHOPTIMIZE_CUSTOM_CSS_DESC"
+                   default=""
+            />
+            <field name="mobile_css"
+                   type="textarea"
+                   label="COM_JCHOPTIMIZE_MOBILE_CSS_LABEL"
+                   description="COM_JCHOPTIMIZE_MOBILE_CSS_DESC"
+                   default=""
+            >
+            </field>
+            <field name="desktop_css"
+                   type="textarea"
+                   label="COM_JCHOPTIMIZE_DESKTOP_CSS_LABEL"
+                   description="COM_JCHOPTIMIZE_DESKTOP_CSS_DESC"
+                   default=""
+            >
+            </field>
+        </fieldset>
+    </fieldset>
+    <!-- ##### Javascript -->
+    <fieldset name="javascript" label="COM_JCHOPTIMIZE_JAVASCRIPT_FIELDSET_LABEL">
+        <!--
+        Javascript automatic settings
+        -->
+        <fieldset name="group_javascript_auto"
+                  label="COM_JCHOPTIMIZE_GROUP_JAVASCRIPT_AUTO_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_JAVASCRIPT_AUTO_DESC"
+        >
+            <field name="javascript"
+                   type="radio"
+                   class="s1-on s2-on s3-on s4-on s5-on s6-on"
+                   layout="joomla.form.field.radio.switcher"
+                   default="1"
+                   label="COM_JCHOPTIMIZE_JAVASCRIPT_LABEL"
+                   description="COM_JCHOPTIMIZE_JAVASCRIPT_DESCRIPTION">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="js_minify"
+                   type="radio"
+                   class="s1-off s2-on s3-on s4-on s5-on s6-on"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_COMPRESS_JAVASCRIPT"
+                   description="COM_JCHOPTIMIZE_COMPRESS_JAVASCRIPT_DESCRIPTION">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="inlineScripts"
+                   type="radio"
+                   class="s1-off s2-off s3-off s4-on s5-on s6-on"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRO_INLINESCRIPTS_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_INLINESCRIPTS_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="bottom_js"
+                   type="radio"
+                   class="s1-off s2-off s3-off s4-off s5-on s6-on"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_POSITION_JS_LABEL"
+                   description="COM_JCHOPTIMIZE_POSITION_JS_DESCRIPTION">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="loadAsynchronous"
+                   type="radio"
+                   class="s1-off s2-off s3-off s4-off s5-off s6-on"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRO_LOADASYNCHRONOUS_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_LOADASYNCHRONOUS_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+
+        <!--
+        Javascript preserving execution order
+        -->
+        <fieldset name="group_exclude_js_peo"
+                  label="COM_JCHOPTIMIZE_GROUP_EXCLUDE_JS_GLOBAL_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_EXCLUDE_JS_GLOBAL_DESC"
+        >
+            <field name="excludeJs_peo"
+                   type="JchMultiSelectWithOptions"
+                   default=""
+                   data-jch_type="js"
+                   data-jch_group="file"
+                   label="COM_JCHOPTIMIZE_EXCLUDE_JS_LABEL"
+                   description="COM_JCHOPTIMIZE_EXCLUDE_JS_DESCRIPTION">
+                <subfield name="ieo"
+                          type="checkbox"
+                          header="Ignore execution order"
+                          class="form-check-input"
+                />
+                <subfield name="dontmove"
+                          type="checkbox"
+                          header="Don&apos;t move to bottom"
+                          class="form-check-input"
+                />
+            </field>
+            <field name="excludeJsComponents_peo"
+                   type="JchMultiSelectWithOptions"
+                   data-jch_type="js"
+                   data-jch_group="extension"
+                   label="COM_JCHOPTIMIZE_EXCLUDE_JS_COMPONENTS_LABEL"
+                   description="COM_JCHOPTIMIZE_EXCLUDE_JS_COMPONENTS_DESCRIPTION">
+                <subfield name="ieo"
+                          type="checkbox"
+                          header="Ignore execution order"
+                          class="form-check-input"
+                />
+                <subfield name="dontmove"
+                          type="checkbox"
+                          header="Don&apos;t move to bottom"
+                          class="form-check-input"
+                />
+            </field>
+            <field name="excludeScripts_peo"
+                   type="JchMultiSelectWithOptions"
+                   data-jch_type="js"
+                   data-jch_group="script"
+                   valueType="script"
+                   label="COM_JCHOPTIMIZE_PRO_EXCLUDE_SCRIPT_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_EXCLUDE_SCRIPT_DESC">
+                <subfield name="ieo"
+                          type="checkbox"
+                          header="Ignore execution order"
+                          class="form-check-input"
+                />
+                <subfield name="dontmove"
+                          type="checkbox"
+                          header="Don&apos;t move to bottom"
+                          class="form-check-input"
+                />
+            </field>
+            <field name="excludeAllScripts"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRO_EXCLUDEALLSCRIPTS_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_EXCLUDEALLSCRIPTS_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+        <fieldset name="group_remove_js_start"
+                  label="COM_JCHOPTIMIZE_REMOVE_JS_GROUP_LABEL"
+                  description="COM_JCHOPTIMIZE_REMOVE_JS_GROUP_DESC"
+        >
+            <field name="remove_js"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="js"
+                   data-jch_group="file"
+                   label="COM_JCHOPTIMIZE_REMOVE_JS_LABEL"
+                   description="COM_JCHOPTIMIZE_REMOVE_JS_DESC"
+            >
+            </field>
+        </fieldset>
+        <!--
+        Reduce unused javascript
+        -->
+        <fieldset name="group_reduce_unused_js"
+                  label="COM_JCHOPTIMIZE_GROUP_REDUCE_UNUSED_JS_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_REDUCE_UNUSED_JS_DESC"
+        >
+            <field name="pro_reduce_unused_js_enable"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_ENABLE"
+                   default="0"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="pro_criticalJs"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="criticaljs"
+                   data-jch_group="file"
+                   proOnly="true"
+                   label="COM_JCHOPTIMIZE_CRITICAL_JS_LABEL"
+                   description="COM_JCHOPTIMIZE_CRITICAL_JS_DESC">
+            </field>
+            <field name="pro_criticalScripts"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="js"
+                   data-jch_group="script"
+                   proOnly="true"
+                   label="COM_JCHOPTIMIZE_CRITICAL_SCRIPTS_LABEL"
+                   description="COM_JCHOPTIMIZE_CRITICAL_SCRIPTS_DESC">
+            </field>
+            <field name="pro_criticalModules"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="modules"
+                   data-jch_group="file"
+                   proOnly="true"
+                   label="COM_JCHOPTIMIZE_CRITICAL_MODULES_LABEL"
+                   description="COM_JCHOPTIMIZE_CRITICAL_MODULES_DESC">
+            </field>
+            <field name="pro_criticalModulesScripts"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="modulesScripts"
+                   data-jch_group="script"
+                   proOnly="true"
+                   label="COM_JCHOPTIMIZE_CRITICAL_MODULESSCRIPTS_LABEL"
+                   description="COM_JCHOPTIMIZE_CRITICAL_MODULESSCRIPTS_DESC">
+            </field>
+            <field name="preload_criticalJs"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRELOAD_CRITICAL_JS_LABEL"
+                   description="COM_JCHOPTIMIZE_PRELOAD_CRITICAL_JS_DESC"
+                   default="0"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="critical_js_configure_helper"
+                   type="criticaljsconfigurehelper"
+                   label="COM_JCHOPTIMIZE_CRITICAL_JS_CONFIGURE_HELPER_LABEL"
+                   description="COM_JCHOPTIMIZE_CRITICAL_JS_CONFIGURE_HELPER_DESC"
+                   showon="debug:1"
+            >
+            </field>
+        </fieldset>
+    </fieldset>
+    <!-- ##### PAGE CACHE -->
+    <fieldset name="page_cache" label="COM_JCHOPTIMIZE_PAGE_CACHE_FIELDSET_LABEL">
+        <!--
+        JCH Optimize Page Cache
+        -->
+        <fieldset name="group_page_cache"
+                  label="COM_JCHOPTIMIZE_PAGE_CACHE_LABEL"
+                  description="COM_JCHOPTIMIZE_PAGE_CACHE_DESC"
+        >
+            <field name="page_cache_lifetime"
+                   type="list"
+                   default="900"
+                   label="COM_JCHOPTIMIZE_PAGECACHE_LIFETIME_LABEL"
+                   description="COM_JCHOPTIMIZE_PAGECACHE_LIFETIME_DESC">
+                <option value="900">COM_JCHOPTIMIZE_15_MIN</option>
+                <option value="1800">COM_JCHOPTIMIZE_30_MIN</option>
+                <option value="3600">COM_JCHOPTIMIZE_1_HOUR</option>
+                <option value="10800">COM_JCHOPTIMIZE_3_HOURS</option>
+                <option value="21600">COM_JCHOPTIMIZE_6_HOURS</option>
+                <option value="43200">COM_JCHOPTIMIZE_12_HOURS</option>
+                <option value="86400">COM_JCHOPTIMIZE_1_DAY</option>
+                <option value="172800">COM_JCHOPTIMIZE_2_DAYS</option>
+                <option value="604800">COM_JCHOPTIMIZE_7_DAYS</option>
+                <option value="1209600">COM_JCHOPTIMIZE_2_WEEKS</option>
+            </field>
+            <field name="pro_cache_platform"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_PAGECACHE_PLATFORM_LABEL"
+                   description="COM_JCHOPTIMIZE_PAGECACHE_PLATFORM_DESC"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="page_cache_exclude_form_users"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="1"
+                   label="COM_JCHOPTIMIZE_PAGECACHE_EXCLUDEFORMUSERS_LABEL"
+                   description="COM_JCHOPTIMIZE_PAGECACHE_EXCLUDEFORMUSERS_DESC"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="cache_exclude"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="url"
+                   data-jch_group="class"
+                   label="COM_JCHOPTIMIZE_CACHEEXCLUDEDURL_LABEL"
+                   description="COM_JCHOPTIMIZE_CACHEEXCLUDEDURL_DESC"
+            >
+            </field>
+            <field name="cache_exclude_menu"
+                   type="menuitem"
+                   multiple="multiple"
+                   layout="joomla.form.field.groupedlist-fancy-select"
+                   label="COM_JCHOPTIMIZE_CACHEEXCLUDEDMENU_LABEL"
+                   description="COM_JCHOPTIMIZE_CACHEEXCLUDEDMENU_DESC"
+            >
+            </field>
+            <field name="cache_exclude_component"
+                   type="excludecomponent"
+                   default="com_ajax"
+                   data-jch_type="component"
+                   data-jch_group="file"
+                   label="COM_JCHOPTIMIZE_CACHEEXCLUDECOMPONENT_LABEL"
+                   description="COM_JCHOPTIMIZE_CACHEEXCLUDECOMPONENT_DESC"
+            >
+            </field>
+            <field name="page_cache_ignore_query_values"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="url"
+                   data-jch_group="class"
+                   label="COM_JCHOPTIMIZE_PAGECACHE_EXCLUDEQUERYVALUES_LABEL"
+                   description="COM_JCHOPTIMIZE_PAGECACHE_EXCLUDEQUERYVALUES_DESC"
+            >
+            </field>
+            <field name="pro_capture_cache_enable"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_PAGECACHE_CAPTURE_LABEL"
+                   description="COM_JCHOPTIMIZE_PAGECACHE_CAPTURE_DESC"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+        <fieldset name="cloudflare"
+                  label="COM_JCHOPTIMIZE_CLOUDFLARE_INTEGRATION_LABEL"
+                  description="COM_JCHOPTIMIZE_CLOUDFLARE_INTEGRATION_DESC"
+        >
+            <field name="cf_enable"
+                   type="proonlyradio"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_CLOUDFLARE_PURGE_ENABLE"
+                   layout="joomla.form.field.radio.switcher">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="cf_api_token"
+                   type="JchVerifyCloudflareToken"
+                   label="COM_JCHOPTIMIZE_CLOUDFLARE_API_TOKEN"
+                   filter="raw"
+                   showon="cf_enable:1"/>
+            <field name="cf_zone_id"
+                   type="proonlytext"
+                   label="COM_JCHOPTIMIZE_CLOUDFLARE_ZONE_ID"
+                   filter="string"
+                   showon="cf_enable:1"/>
+            <!--   <field name="cf_purge_mode"
+                      type="list"
+                      default="everything"
+                      label="COM_JCHOPTIMIZE_CLOUDFLARE_PURGE_MODE"
+                      showon="cf_enable:1">
+                   <option value="everything">COM_JCHOPTIMIZE_CLOUDFLARE_OPTION_PURGE_EVERYTHING</option>
+                   <option value="urls">COM_JCHOPTIMIZE_CLOUDFLARE_OPTION_PURGE_BY_URLS</option>
+               </field> -->
+        </fieldset>
+        <fieldset name="group_mode_switcher_integration"
+                  label="COM_JCHOPTIMIZE_MODE_SWITCHER_INTEGRATION_LABEL"
+                  description="COM_JCHOPTIMIZE_MODE_SWITCHER_INTEGRATION_DESC"
+        >
+            <field name="pro_page_cache_integration"
+                   type="jchpagecache"
+                   default="jchpagecache"
+                   label="COM_JCHOPTIMIZE_PAGECACHE_INTEGRATION_LABEL"
+                   description="COM_JCHOPTIMIZE_PAGECACHE_INTEGRATION_DESC"
+            >
+            </field>
+            <field name="pro_page_cache_integration_enable"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="1"
+                   label="COM_JCHOPTIMIZE_MODE_SWITCHER_INTEGRATION_ENABLE_LABEL"
+                   description="COM_JCHOPTIMIZE_MODE_SWITCHER_INTEGRATION_ENABLE_DESC"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+
+    </fieldset>
+    <!-- ##### MEDIA -->
+    <fieldset name="media" label="COM_JCHOPTIMIZE_MEDIA_FIELDSET_LABEL">
+        <!--
+        Add image attributes
+        -->
+        <fieldset name="group_img_attributes"
+                  label="COM_JCHOPTIMIZE_IMAGE_ATTRIBUTES_LABEL"
+                  description="COM_JCHOPTIMIZE_IMAGES_ATTRIBUTES_DESCRIPTION"
+        >
+            <field name="img_attributes_enable"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_ENABLE">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+        <!--
+        Sprite Generator
+        -->
+        <fieldset name="group_csg_spritegenerator"
+                  label="COM_JCHOPTIMIZE_SPRITE_GENERATOR_LABEL"
+                  description="COM_JCHOPTIMIZE_SPRITE_GENERATOR_DESCRIPTION"
+        >
+            <field name="csg_enable"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_ENABLE">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="csg_direction"
+                   type="list"
+                   default="vertical"
+                   label="COM_JCHOPTIMIZE_SPRITE_DIRECTION_LABEL"
+                   description="COM_JCHOPTIMIZE_SPRITE_DIRECTION_DESCRIPTION">
+                <option value="vertical">COM_JCHOPTIMIZE_VERTICAL</option>
+                <option value="horizontal">COM_JCHOPTIMIZE_HORIZONTAL</option>
+            </field>
+            <field name="csg_wrap_images"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_WRAP_IMAGES_LABEL"
+                   description="COM_JCHOPTIMIZE_WRAP_IMAGES_DESCRIPTION">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="csg_exclude_images"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="images"
+                   data-jch_group="file"
+                   label="COM_JCHOPTIMIZE_EXCLUDE_IMAGES_LABEL"
+                   description="COM_JCHOPTIMIZE_EXCLUDE_IMAGES_DESCRIPTION">
+            </field>
+            <field name="csg_include_images"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="images"
+                   data-jch_group="file"
+                   label="COM_JCHOPTIMIZE_INCLUDE_IMAGES_LABEL"
+                   description="COM_JCHOPTIMIZE_INCLUDE_IMAGES_DESCRIPTION">
+            </field>
+        </fieldset>
+        <!--
+        Lazyload
+        -->
+        <fieldset name="group_pro_lazyload"
+                  label="COM_JCHOPTIMIZE_PRO_LAZYLOAD_LABEL"
+                  description="COM_JCHOPTIMIZE_PRO_LAZYLOAD_DESC"
+        >
+            <field name="lazyload_enable"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_ENABLE"
+                   description="COM_JCHOPTIMIZE_PRO_LAZYLOAD_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <!--   <field name="lazyload_autosize"
+                      type="radio"
+                      layout="joomla.form.field.radio.switcher"
+                      label="COM_JCHOPTIMIZE_PRO_LAZYLOAD_AUTOSIZE_LABEL"
+                      description="COM_JCHOPTIMIZE_PRO_LAZYLOAD_AUTOSIZE_DESC"
+                      default="1">
+                   <option value="0">JNO</option>
+                   <option value="1">JYES</option>
+               </field> -->
+            <field name="pro_lazyload_iframe"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRO_LAZYLOAD_IFRAME_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_LAZYLOAD_IFRAME_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="use_youtube_facade"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_USE_YOUTUBE_FACADE_LABEL"
+                   description="COM_JCHOPTIMIZE_USE_YOUTUBE_FACADE_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="pro_lazyload_audiovideo"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRO_LAZYLOAD_AUDIOVIDEO_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_LAZYLOAD_AUDIOVIDEO_DESC"
+                   default="0"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="pro_lazyload_bgimages"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRO_LAZYLOAD_BGIMAGES_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_LAZYLOAD_BGIMAGES_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="excludeLazyLoad"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="lazyload"
+                   data-jch_group="file"
+                   label="COM_JCHOPTIMIZE_PRO_EXCLUDE_LAZYLOAD_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_EXCLUDE_LAZYLOAD_DESC">
+            </field>
+            <field name="pro_excludeLazyLoadFolders"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="lazyload"
+                   data-jch_group="folder"
+                   label="COM_JCHOPTIMIZE_PRO_EXCLUDE_LAZYLOADFOLDER_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_EXCLUDE_LAZYLOADFOLDER_DESC">
+            </field>
+            <field name="pro_excludeLazyLoadClass"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="lazyload"
+                   data-jch_group="class"
+                   label="COM_JCHOPTIMIZE_PRO_EXCLUDE_LAZYLOADCLASS_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_EXCLUDE_LAZYLOADCLASS_DESC">
+            </field>
+            <field name="includeLazyLoad"
+                   type="JchMultiSelect"
+                   data-jch_type="lazyload"
+                   data-jch_group="file"
+                   label="COM_JCHOPTIMIZE_INCLUDE_LAZYLOAD_LABEL"
+                   description="COM_JCHOPTIMIZE_INCLUDE_LAZYLOAD_DESC"
+            />
+            <field name="includeLazyLoadFolders"
+                   type="JchMultiSelect"
+                   data-jch_type="lazyload"
+                   data-jch_group="folder"
+                   label="COM_JCHOPTIMIZE_INCLUDE_LAZYLOADFOLDER_LABEL"
+                   description="COM_JCHOPTIMIZE_INCLUDE_LAZYLOADFOLDER_DESC"
+            />
+            <field name="includeLazyLoadClass"
+                   type="JchMultiSelect"
+                   data-jch_type="lazyload"
+                   data-jch_group="class"
+                   label="COM_JCHOPTIMIZE_INCLUDE_LAZYLOADCLASS_LABEL"
+                   description="COM_JCHOPTIMIZE_INCLUDE_LAZYLOADCLASS_DESC"
+            />
+            <!--<field name="pro_lazyload_effects"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRO_LAZYLOAD_EFFECTS_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_LAZYLOAD_EFFECTS_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>-->
+        </fieldset>
+    </fieldset>
+    <!-- ##### PRELOADS -->
+    <fieldset name="preloads" label="COM_JCHOPTIMIZE_PRELOADS_FIELDSET_LABEL">
+        <!--
+        Http2Preload
+        -->
+        <fieldset name="group_http2_push"
+                  label="COM_JCHOPTIMIZE_PRO_HTTP2_PUSH_LABEL"
+                  description="COM_JCHOPTIMIZE_PRO_HTTP2_PUSH_DESC"
+        >
+            <field name="http2_push_enable"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_ENABLE"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="pro_http2_file_types"
+                   type="proonlycheckboxes"
+                   label="COM_JCHOPTIMIZE_PRO_HTTP2_FILE_TYPES_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_HTTP2_FILE_TYPES_DESC"
+                   class="jch-checkboxes-grid-wrapper columns-4"
+                   checked="style,script,font,image">
+                <option value="style">style</option>
+                <option value="script">script</option>
+                <option value="font">font</option>
+                <option value="image">image</option>
+            </field>
+            <field name="pro_http2_preload_modules"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRO_HTTP2_PRELOAD_MODULES_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_HTTP2_PRELOAD_MODULES_DESC"
+                   default="1"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="pro_http2_include"
+                   type="JchMultiSelectWithOptions"
+                   default=""
+                   data-jch_type="http2"
+                   data-jch_group="file"
+                   valueType="url"
+                   subFieldClass="only-one"
+                   label="COM_JCHOPTIMIZE_PRO_HTTP2_INCLUDE_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_HTTP2_INCLUDE_DESC">
+                <subfield name="crossorigin"
+                          type="select"
+                          legacy="anonymous,use-credentials"
+                          header="Crossorigin"
+                          class="form-select form-select-sm"
+                          >
+                    <option value="">- None -</option>
+                    <option value="anonymous">anonymous</option>
+                    <option value="use-credentials">use-credentials</option>
+                </subfield>
+               <!--<subfield name="anonymous"
+                          type="checkbox"
+                          header="Crossorigin: 'anonymous'"
+                          class="only-one form-check-input"
+                />
+                <subfield name="use-credentials"
+                          type="checkbox"
+                          header="'use-credentials'"
+                          class="only-one form-check-input"
+                />-->
+            </field>
+            <field name="pro_http2_exclude"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="http2"
+                   data-jch_group="file"
+                   label="COM_JCHOPTIMIZE_PRO_HTTP2_EXCLUDE_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_HTTP2_EXCLUDE_DESC">
+            </field>
+        </fieldset>
+        <!--
+        LCP Images
+        -->
+        <fieldset name="group_largest_content_paint_images"
+                  label="COM_JCHOPTIMIZE_GROUP_LCPIMAGES_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_LCPIMAGES_DESC"
+        >
+            <field name="pro_lcp_images_enable"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_ENABLE"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="pro_lcp_images"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="lazyload"
+                   data-jch_group="file"
+                   proOnly="true"
+                   label="COM_JCHOPTIMIZE_LCPIMAGES_LABEL"
+                   description="COM_JCHOPTIMIZE_LCPIMAGES_DESC">
+            </field>
+            <field name="pro_lcp_identifiers"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="lazyload"
+                   data-jch_group="class"
+                   proOnly="true"
+                   label="COM_JCHOPTIMIZE_LCPIDENTIFIERS_LABEL"
+                   description="COM_JCHOPTIMIZE_LCPIDENTIFIERS_DESC">
+            </field>
+            <field name="lcp_images_mobile"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="lazyload"
+                   data-jch_group="file"
+                   proOnly="true"
+                   label="COM_JCHOPTIMIZE_LCPIMAGES_MOBILE_LABEL"
+                   description="COM_JCHOPTIMIZE_LCPIMAGES_MOBILE_DESC"
+            >
+            </field>
+            <field name="lcp_images_desktop"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="lazyload"
+                   data-jch_group="file"
+                   proOnly="true"
+                   label="COM_JCHOPTIMIZE_LCPIMAGES_DESKTOP_LABEL"
+                   description="COM_JCHOPTIMIZE_LCPIMAGES_DESKTOP_DESC"
+            >
+            </field>
+        </fieldset>
+        <!--
+        Optimize Fonts
+        -->
+        <fieldset name="group_optimize_font"
+                  label="COM_JCHOPTIMIZE_OPTIMIZEFONT_LABEL"
+                  description="COM_JCHOPTIMIZE_OPTIMIZEFONT_DESCRIPTION"
+        >
+            <field name="pro_optimizeFonts_enable"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_ENABLE">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="pro_force_swap_policy"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="1"
+                   label="COM_JCHOPTIMIZE_FORCE_SWAP_POLICY_LABEL"
+                   description="COM_JCHOPTIMIZE_FORCE_SWAP_POLICY_DESCRIPTION"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="pro_optimize_font_files"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="css"
+                   data-jch_group="file"
+                   proOnly="true"
+                   label="COM_JCHOPTIMIZE_OPTIMIZE_FONT_FILES_LABEL"
+                   description="COM_JCHOPTIMIZE_OPTIMIZE_FONT_FILES_DESCRIPTION">
+            </field>
+        </fieldset>
+        <!--
+        Preconnects
+        -->
+        <fieldset name="group_preconnect_domain"
+                  label="COM_JCHOPTIMIZE_GROUP_PRECONNECT_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_PRECONNECT_DESC"
+        >
+            <field name="pro_preconnect_domains_enable"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_ENABLE">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="pro_preconnect_domains"
+                   type="JchMultiSelectWithOptions"
+                   default=""
+                   data-jch_type="url"
+                   data-jch_group="origin"
+                   valueType="url"
+                   subFieldClass="only-one"
+                   label="COM_JCHOPTIMIZE_PRECONNECT_DOMAINS_LABEL"
+                   description="COM_JCHOPTIMIZE_PRECONNECT_DOMAINS_DESCRIPTION"
+            >
+                <subfield name="crossorigin"
+                          type="select"
+                          legacy="anonymous,use-credentials"
+                          header="Crossorigin"
+                          class="form-select form-select-sm"
+                          >
+                    <option value="">- None -</option>
+                    <option value="anonymous">anonymous</option>
+                    <option value="use-credentials">use-credentials</option>
+                </subfield>
+               <!--<subfield name="anonymous"
+                          type="checkbox"
+                          header="Crossorigin: 'anonymous'"
+                          class="only-one form-check-input"
+                />
+                <subfield name="use-credentials"
+                          type="checkbox"
+                          header="'use-credentials'"
+                          class="only-one form-check-input"
+                />-->
+            </field>
+            <field name="dns_prefetch_domains"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="url"
+                   data-jch_group="origin"
+                   label="COM_JCHOPTIMIZE_DNSPREFETCH_DOMAINS_LABEL"
+                   description="COM_JCHOPTIMIZE_DNSPREFETCH_DOMAINS_DESCRIPTION"
+            />
+
+        </fieldset>
+    </fieldset>
+    <!-- ##### CDN -->
+    <fieldset name="cdn" label="COM_JCHOPTIMIZE_CDN_FIELDSET_LABEL">
+        <!--
+        CDN
+        -->
+        <fieldset name="group_pro_cdn"
+                  label="COM_JCHOPTIMIZE_PRO_COOKIELESSDOMAIN_LABEL"
+                  description="COM_JCHOPTIMIZE_PRO_COOKIELESSDOMAIN_DESC"
+        >
+            <field name="cookielessdomain_enable"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_ENABLE"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="cdn_scheme"
+                   type="list"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_PRO_CDN_SCHEME_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_CDN_SCHEME_DESC">
+                <option value="0">COM_JCHOPTIMIZE_SCHEME_RELATIVE</option>
+                <option value="1">COM_JCHOPTIMIZE_HTTP</option>
+                <option value="2">COM_JCHOPTIMIZE_HTTPS</option>
+            </field>
+            <field name="cookielessdomain"
+                   type="text"
+                   default=""
+                   label="COM_JCHOPTIMIZE_PRO_COOKIELESSDOMAINONE"
+                   description="COM_JCHOPTIMIZE_PRO_COOKIELESSDOMAINONE_DESC"
+                   size="50">
+            </field>
+            <field name="staticfiles"
+                   type="checkboxes"
+                   label="COM_JCHOPTIMIZE_PRO_STATICFILES_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_STATICFILES_DESC"
+                   class="jch-checkboxes-grid-wrapper columns-5"
+                   checked="css,js,jpe?g,gif,png,ico,bmp,pdf,webp,svg">
+                <option value="css">css</option>
+                <option value="png">png</option>
+                <option value="gif">gif</option>
+                <option value="ico">ico</option>
+                <option value="pdf">pdf</option>
+                <option value="js">js</option>
+                <option value="jpe?g">jp(e)g</option>
+                <option value="bmp">bmp</option>
+                <option value="webp">webp</option>
+                <option value="svg">svg</option>
+            </field>
+            <field name="pro_customcdnextensions"
+                   type="JchMultiSelect"
+                   default=""
+                   data-jch_type="file"
+                   data-jch_group="extension"
+                   label="COM_JCHOPTIMIZE_PRO_CUSTOMEXTENSION_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_CUSTOMEXTENSION_DESC"
+            >
+            </field>
+            <field name="pro_cookielessdomain_2"
+                   type="proonlytext"
+                   default=""
+                   label="COM_JCHOPTIMIZE_PRO_COOKIELESSDOMAINTWO"
+                   description="COM_JCHOPTIMIZE_PRO_COOKIELESSDOMAINTWO_DESC"
+                   size="50">
+            </field>
+            <field name="pro_staticfiles_2"
+                   type="proonlycheckboxes"
+                   label="COM_JCHOPTIMIZE_PRO_STATICFILES2_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_STATICFILES2_DESC"
+                   class="jch-checkboxes-grid-wrapper columns-5"
+                   checked="css,js,jpe?g,gif,png,ico,bmp,pdf,webp,svg">
+                <option value="css">css</option>
+                <option value="png">png</option>
+                <option value="gif">gif</option>
+                <option value="ico">ico</option>
+                <option value="pdf">pdf</option>
+                <option value="js">js</option>
+                <option value="jpe?g">jp(e)g</option>
+                <option value="bmp">bmp</option>
+                <option value="webp">webp</option>
+                <option value="svg">svg</option>
+            </field>
+            <field name="pro_cookielessdomain_3"
+                   type="proonlytext"
+                   default=""
+                   label="COM_JCHOPTIMIZE_PRO_COOKIELESSDOMAINTHREE"
+                   description="COM_JCHOPTIMIZE_PRO_COOKIELESSDOMAINTHREE_DESC"
+                   size="50">
+            </field>
+            <field name="pro_staticfiles_3"
+                   type="proonlycheckboxes"
+                   label="COM_JCHOPTIMIZE_PRO_STATICFILES3_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_STATICFILES3_DESC"
+                   class="jch-checkboxes-grid-wrapper columns-5"
+                   checked="css,js,jpe?g,gif,png,ico,bmp,pdf,webp,svg">
+                <option value="css">css</option>
+                <option value="png">png</option>
+                <option value="gif">gif</option>
+                <option value="ico">ico</option>
+                <option value="pdf">pdf</option>
+                <option value="js">js</option>
+                <option value="jpe?g">jp(e)g</option>
+                <option value="bmp">bmp</option>
+                <option value="webp">webp</option>
+                <option value="svg">svg</option>
+            </field>
+        </fieldset>
+    </fieldset>
+    <!-- ##### Optimize Image -->
+    <fieldset name="optimize_image" label="COM_JCHOPTIMIZE_OPTIMIZE_IMAGES_FIELDSET_LABEL">
+
+        <!--
+            Global Options
+            -->
+        <fieldset name="group_api2_global"
+                  label="COM_JCHOPTIMIZE_GROUP_OPTIMIZE_IMAGES_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_OPTIMIZE_IMAGES_DESCRIPTION"
+        >
+            <field name="ignore_optimized"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_IGNORE_OPTIMIZED_LABEL"
+                   description="COM_JCHOPTIMIZE_IGNORE_OPTIMIZED_DESC"
+                   default="1">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+        <!--
+        Next Generation Images
+        -->
+        <fieldset name="group_next_gen_images"
+                  label="COM_JCHOPTIMIZE_GROUP_NEXT_GEN_IMAGES_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_NEXT_GEN_IMAGES_DESC">
+            <field name="pro_next_gen_images"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_NEXT_GEN_IMAGES_LABEL"
+                   description="COM_JCHOPTIMIZE_NEXT_GEN_IMAGES_DESC"
+                   default="1">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="gen_avif_images"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_GEN_AVIF_IMAGES_LABEL"
+                   description="COM_JCHOPTIMIZE_GEN_AVIF_IMAGES_DESC"
+                   default="1">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="load_avif_webp_images"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_LOAD_AVIF_WEBP_IMAGES_LABEL"
+                   description="COM_JCHOPTIMIZE_LOAD_AVIF_WEBP_IMAGES_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="pro_load_webp_images"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_LOAD_WEBP_IMAGES_LABEL"
+                   description="COM_JCHOPTIMIZE_LOAD_WEBP_IMAGES_DESC"
+                   default="1">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+
+            <field name="load_avif_images"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_LOAD_AVIF_IMAGES_LABEL"
+                   description="COM_JCHOPTIMIZE_LOAD_AVIF_IMAGES_DESC"
+                   default="1">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="unsupported_browsers_policy"
+                   type="proonlylist"
+                   label="COM_JCHOPTIMIZE_UNSUPPORTED_BROWSERS_POLICY_LABEL"
+                   description="COM_JCHOPTIMIZE_UNSUPPORTED_BROWSERS_POLICY_DESC"
+                   default="0">
+                <option value="0">COM_JCHOPTIMIZE_WEBP_ALL_BROWSERS_OPTION</option>
+                <option value="1">COM_JCHOPTIMIZE_WEBP_ONLY_SUPPORTED_BROWSERS_OPTION</option>
+                <!--<option value="2">COM_JCHOPTIMIZE_WEBP_FALLBACK_BROWSERS_OPTION</option>-->
+            </field>
+        </fieldset>
+        <!--
+        Responsive images
+        -->
+        <fieldset name="group_responsive_images"
+                  label="COM_JCHOPTIMIZE_GROUP_RESPONSIVE_IMAGES_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_RESPONSIVE_IMAGES_DESC">
+            <field name="pro_gen_responsive_images"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_GEN_RESPONSIVE_IMAGES_LABEL"
+                   description="COM_JCHOPTIMIZE_GEN_RESPONSIVE_IMAGES_DESC"
+                   default="1">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="pro_load_responsive_images"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_LOAD_RESPONSIVE_IMAGES_LABEL"
+                   description="COM_JCHOPTIMIZE_LOAD_RESPONSIVE_IMAGES_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="replace_srcset_responsive"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_REPLACE_SRCSET_RESPONSIVE_LABEL"
+                   description="COM_JCHOPTIMIZE_REPLACE_SRCSET_RESPONSIVE_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="cropgravity"
+                   type="JchMultiSelectWithOptions"
+                   data-jch_type="lazyload"
+                   data-jch_group="file"
+                   proOnly="true"
+                   label="COM_JCHOPTIMIZE_API_CROP_LABEL"
+                   description="COM_JCHOPTIMIZE_API_CROP_DESC">
+                <subfield name="gravity"
+                          type="select"
+                          header="Position"
+                          class="form-select form-select-sm"
+                >
+                    <option value="West">Left</option>
+                    <option value="Center" selected="selected">Center</option>
+                    <option value="East">Right</option>
+                </subfield>
+                <subfield name="cropwidth"
+                          type="text"
+                          header="Width (px)"
+                          default="576"
+                          class="form-control form-control-sm"
+                />
+            </field>
+        </fieldset>
+        <!--
+        Optimize Config
+        -->
+        <fieldset name="group_optimize_options"
+                  label="COM_JCHOPTIMIZE_GROUP_OPTIMIZE_OPTIONS_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_OPTIMIZE_OPTIONS_DESC">
+            <!--       <field name="pro_webp_old_browsers"
+                          type="proonlyradio"
+                          layout="joomla.form.field.radio.switcher"
+                          label="COM_JCHOPTIMIZE_WEBP_OLD_BROWSERS_LABEL"
+                          description="COM_JCHOPTIMIZE_WEBP_OLD_BROWSERS_DESC"
+                          default="0">
+                       <option value="0">JNO</option>
+                       <option value="1">JYES</option>
+                   </field> -->
+            <field name="lossy"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_LOSSY_LABEL"
+                   description="COM_JCHOPTIMIZE_LOSSY_DESC"
+                   default="1">
+                <option value="0">COM_JCHOPTIMIZE_LOSSLESS</option>
+                <option value="1">COM_JCHOPTIMIZE_LOSSY</option>
+            </field>
+            <field name="save_metadata"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_SAVE_METADATA_LABEL"
+                   description="COM_JCHOPTIMIZE_SAVE_METADATA_DESC"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="quality"
+                   type="number"
+                   default="85"
+                   max="100"
+                   min="0"
+                   label="COM_JCHOPTIMIZE_API_QUALITY_LABEL"
+                   description="COM_JCHOPTIMIZE_API_QUALITY_DESC"/>
+        </fieldset>
+        <!--
+        Upload Settings
+        -->
+        <fieldset name="group_upload"
+                  label="COM_JCHOPTIMIZE_GROUP_UPLOADS_SETTINGS_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_UPLOADS_SETTINGS_DESC"
+        >
+            <field name="pro_api_concurrency"
+                   type="proonlytext"
+                   label="COM_JCHOPTIMIZE_PRO_API_CONCURRENCY_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_API_CONCURRENCY_DESC"
+                   default="5"
+            >
+            </field>
+            <field name="pro_api_num_files"
+                   type="proonlytext"
+                   label="COM_JCHOPTIMIZE_PRO_API_NUM_FILES_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_API_NUM_FILES_DESC">
+            </field>
+            <field name="pro_api_max_size"
+                   type="proonlytext"
+                   label="COM_JCHOPTIMIZE_PRO_API_MAX_SIZE_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_API_MAX_SIZE_DESC"
+                   default="2M">
+            </field>
+            <field name="api_connection_timeout"
+                   type="pronlytext"
+                   label="COM_JCHOPTIMIZE_API_CONNECTION_TIMEOUT_LABEL"
+                   description="COM_JCHOPTIMIZE_API_CONNECTION_TIMEOUT_DESC"
+                   default="30"/>
+        </fieldset>
+        <!--
+        Optimize By URL
+        -->
+        <fieldset name="group_optimize_by_url"
+                  label="COM_JCHOPTIMIZE_GROUP_OPTIMIZE_IMAGES_BY_URLS_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_OPTIMIZE_IMAGES_BY_URLS_DESC">
+            <field name="pro_api_base_url"
+                   type="proonlytext"
+                   label="COM_JCHOPTIMIZE_PRO_API_BASE_URL_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_API_BASE_URL_DESC"
+            >
+            </field>
+            <field name="pro_api_crawl_limit"
+                   type="proonlytext"
+                   label="COM_JCHOPTIMIZE_PRO_API_CRAWL_LIMIT_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_API_CRAWL_LIMIT_DESC"
+                   default="15">
+            </field>
+            <field name="pro_api_resize_mode"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_PRO_API_RESIZE_MODE_LABEL"
+                   description="COM_JCHOPTIMIZE_PRO_API_RESIZE_MODE_DESC"
+                   default="manual">
+                <option value="manual">JNO</option>
+                <option value="auto">JYES</option>
+            </field>
+        </fieldset>
+        <!--
+        Optimize BY Folder
+        -->
+        <fieldset name="group_optimize_by_folder"
+                  label="COM_JCHOPTIMIZE_GROUP_OPTIMIZE_IMAGES_BY_FOLDER_LABEL"
+                  description="COM_JCHOPTIMIZE_GROUP_OPTIMIZE_IMAGES_BY_FOLDER_DESC"
+        >
+            <field name="recursive"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="COM_JCHOPTIMIZE_RECURSIVE_LABEL"
+                   description="COM_JCHOPTIMIZE_RECURSIVE_DESC"
+                   default="1"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+    </fieldset>
+    <!-- ##### Miscellaneous -->
+    <fieldset name="miscellaneous" label="COM_JCHOPTIMIZE_MISCELLANEOUS_FIELDSET_LABEL">
+        <fieldset name="group_reduce_dom_start"
+                  label="COM_JCHOPTIMIZE_REDUCE_DOM_LABEL"
+                  description="COM_JCHOPTIMIZE_REDUCE_DOM_DESCRIPTION">
+            <field name="pro_reduce_dom"
+                   type="proonlyradio"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   label="COM_JCHOPTIMIZE_ENABLE"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="pro_html_sections"
+                   type="proonlycheckboxes"
+                   label="COM_JCHOPTIMIZE_HTML_SECTIONS_LABEL"
+                   description="COM_JCHOPTIMIZE_HTML_SECTIONS_DESC"
+                   class="jch-checkboxes-grid-wrapper columns-7"
+                   checked="header,nav,main,article,section,aside,footer">
+                <option value="header">COM_JCHOPTIMIZE_HTML_HEADER</option>
+                <option value="nav">COM_JCHOPTIMIZE_HTML_NAV</option>
+                <option value="main">COM_JCHOPTIMIZE_HTML_MAIN</option>
+                <option value="article">COM_JCHOPTIMIZE_HTML_ARTICLE</option>
+                <option value="section">COM_JCHOPTIMIZE_HTML_SECTION</option>
+                <option value="aside">COM_JCHOPTIMIZE_HTML_ASIDE</option>
+                <option value="footer">COM_JCHOPTIMIZE_HTML_FOOTER</option>
+            </field>
+            <field name="reduce_dom_identifiers"
+                   type="JchMultiSelect"
+                   data-jch_type="reducedom"
+                   data-jch_group="class"
+                   proOnly="true"
+                   label="COM_JCHOPTIMIZE_REDUCE_DOM_IDENTIFIERS_LABEL"
+                   description="COM_JCHOPTIMIZE_REDUCE_DOM_IDENTIFIERS_DESC"
+            />
+            <field name="reduce_dom_exclude_identifiers"
+                   type="JchMultiSelect"
+                   data-jch_type="reducedom"
+                   data-jch_group="class"
+                   proOnly="true"
+                   label="COM_JCHOPTIMIZE_REDUCE_DOM_EXCLUDE_IDENTIFIERS_LABEL"
+                   description="COM_JCHOPTIMIZE_REDUCE_DOM_EXCLUDE_IDENTIFIERS_DESC"
+            />
+            <field name="reduce_dom_above_fold_identifiers"
+                   type="JchMultiSelect"
+                   data-jch_type="reducedom"
+                   data-jch_group="class"
+                   proOnly="true"
+                   label="COM_JCHOPTIMIZE_REDUCE_DOM_ABOVE_FOLD_IDENTIFIERS_LABEL"
+                   description="COM_JCHOPTIMIZE_REDUCE_DOM_ABOVE_FOLD_IDENTIFIERS_DESC"
+            />
+        </fieldset>
+
+    </fieldset>
+    <!-- ##### Permissions -->
+    <fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+        <field
+                name="rules"
+                type="rules"
+                label="JCONFIG_PERMISSIONS_LABEL"
+                class="inputbox"
+                filter="rules"
+                component="com_jchoptimize"
+                section="component"/>
+    </fieldset>
+</config>

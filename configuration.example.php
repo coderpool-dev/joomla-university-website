@@ -1,0 +1,64 @@
+<?php
+
+class JConfig
+{
+    public $offline = false;
+    public $offline_message = 'Site is temporarily offline.';
+    public $display_offline_message = 1;
+    public $offline_image = '';
+    public $sitename = 'example.edu';
+    public $editor = 'tinymce';
+    public $captcha = '';
+    public $list_limit = 20;
+    public $access = 1;
+    public $frontediting = 1;
+    public $debug = false;
+    public $debug_lang = false;
+    public $debug_lang_const = true;
+    public $dbtype = 'mysqli';
+    public $host = 'localhost';
+    public $user = 'joomla_user';
+    public $password = 'change-me';
+    public $db = 'joomla_database';
+    public $dbprefix = 'jos_';
+    public $dbencryption = 0;
+    public $dbsslverifyservercert = false;
+    public $dbsslkey = '';
+    public $dbsslcert = '';
+    public $dbsslca = '';
+    public $dbsslcipher = '';
+    public $force_ssl = 1;
+    public $live_site = '';
+    public $secret = 'change-this-secret';
+    public $gzip = true;
+    public $error_reporting = 'simple';
+    public $helpurl = 'https://help.joomla.org/proxy?keyref=Help{major}{minor}:{keyref}&lang={langcode}';
+    public $offset = 'UTC';
+    public $mailonline = true;
+    public $mailer = 'mail';
+    public $mailfrom = 'noreply@example.edu';
+    public $fromname = 'Example University';
+    public $sendmail = '/usr/sbin/sendmail';
+    public $smtpauth = false;
+    public $smtpuser = '';
+    public $smtppass = '';
+    public $smtphost = 'localhost';
+    public $smtpsecure = 'none';
+    public $smtpport = 25;
+    public $caching = 2;
+    public $cache_handler = 'file';
+    public $cachetime = 60;
+    public $cache_platformprefix = true;
+    public $sef = true;
+    public $sef_rewrite = true;
+    public $sef_suffix = false;
+    public $unicodeslugs = true;
+    public $feed_limit = 10;
+    public $feed_email = 'none';
+    public $log_path = '/var/www/example/administrator/logs';
+    public $tmp_path = '/var/www/example/tmp';
+    public $lifetime = 2880;
+    public $session_handler = 'database';
+    public $shared_session = false;
+    public $session_metadata = true;
+}

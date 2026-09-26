@@ -1,0 +1,124 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "com_jchoptimize",
+  "description": "JCH Optimize",
+  "version": "9.2.5",
+  "license": "GPL-3.0-or-later",
+  "assets": [
+    {
+      "name": "com_jchoptimize.core.dashicons",
+      "type": "style",
+      "version": "9.2.5",
+      "uri": "com_jchoptimize/core/dashicons.css",
+      "dependencies": [
+        "com_jchoptimize.dashicons-joomla"
+      ]
+    },
+    {
+      "name": "com_jchoptimize.dashicons-joomla",
+      "type": "style",
+      "version": "9.2.5",
+      "uri": "com_jchoptimize/dashicons-joomla.css",
+      "dependencies": [
+        "template.atum.ltr"
+      ]
+    },
+    {
+      "name": "com_jchoptimize.platform-joomla",
+      "type": "script",
+      "version": "9.2.5",
+      "uri": "com_jchoptimize/platform-joomla.js"
+    },
+    {
+      "name": "com_jchoptimize.core.file-upload",
+      "type": "script",
+      "version": "9.2.5",
+      "uri": "com_jchoptimize/core/file_upload.js"
+    },
+    {
+      "name": "com_jchoptimize.bulksettings",
+      "type": "style",
+      "version": "9.2.5",
+      "uri": "com_jchoptimize/bulksettings-joomla.css"
+    },
+    {
+      "name": "com_jchoptimize.core.admin-styles",
+      "type": "style",
+      "version": "9.2.5",
+      "uri": "com_jchoptimize/core/admin.css"
+    },
+    {
+      "name": "com_jchoptimize.admin-joomla",
+      "type": "style",
+      "version": "9.2.5",
+      "uri": "com_jchoptimize/admin-joomla.css"
+    },
+    {
+      "name": "com_jchoptimize.core.admin-utility",
+      "type": "script",
+      "version": "9.2.5",
+      "uri": "com_jchoptimize/core/admin-utility.js",
+      "dependencies": [
+        "jquery"
+      ]
+    },
+    {
+      "name": "com_jchoptimize.core.multiselect-css",
+      "type": "style",
+      "version": "9.2.5",
+      "uri": "com_jchoptimize/core/multiselect.css"
+    },
+    {
+      "name": "com_jchoptimize.core.multiselect",
+      "type": "script",
+      "version": "9.2.5",
+      "uri": "com_jchoptimize/core/multiselect.js",
+      "dependencies": [
+        "jquery",
+        "com_jchoptimize.platform-joomla"
+      ]
+    },
+    {
+      "name": "com_jchoptimize.js-excludes",
+      "type": "style",
+      "version": "9.2.5",
+      "uri": "com_jchoptimize/js-excludes-J4.css"
+    },
+    {
+      "name": "com_jchoptimize.filetree",
+      "type": "style",
+      "version": "9.2.5",
+      "uri": "com_jchoptimize/filetree/jquery.filetree.css"
+    },
+    {
+      "name": "com_jchoptimize.filetree",
+      "type": "script",
+      "version": "9.2.5",
+      "uri": "com_jchoptimize/filetree/jquery.filetree.js",
+      "dependencies": [
+        "jquery"
+      ]
+    },
+    {
+      "name": "com_jchoptimize.filetree",
+      "type": "preset",
+      "version": "9.2.5",
+      "dependencies": [
+        "com_jchoptimize.filetree#style",
+        "com_jchoptimize.filetree#script"
+      ]
+    },
+    {
+      "name": "com_jchoptimize.core.optimize-image",
+      "type": "script",
+      "version": "9.2.5",
+      "uri": "com_jchoptimize/core/optimize-image.js",
+      "attributes": {
+        "type": "module"
+      },
+      "dependencies": [
+        "bootstrap.modal"
+      ]
+    }
+  ]
+}

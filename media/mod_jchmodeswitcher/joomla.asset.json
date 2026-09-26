@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web-assets.json",
+  "name": "mod_jchmodeswitcher",
+  "description": "JCH Optimize Mode Switcher",
+  "license": "GPL-3.0-or-later",
+  "assets": [
+    {
+      "name": "mod_jchmodeswitcher.modeswitcher",
+      "type": "style",
+      "uri": "mod_jchmodeswitcher/modeswitcher.css"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="module" client="administrator" method="upgrade" version="4.3">
+    <name>mod_jchdashicons</name>
+    <description>MOD_JCHDASHICONS_DESCRIPTION</description>
+    <version>9.2.5</version>
+    <creationDate>2026-01-17</creationDate>
+    <author>Samuel Marshall</author>
+    <authorUrl>https://www.jch-optimize.net</authorUrl>
+    <variant>PRO</variant>
+    <copyright>Copyright (C) 2021 Samuel Marshall/JCH Optimize, All rights reserved.</copyright>
+    <license>GNU/GPLv3 https://www.gnu.org/licenses/gpl-3.0.html</license>
+    <namespace path="src">CodeAlfa\Module\JchDashIcons</namespace>
+    <files>
+        <folder module="mod_jchdashicons">services</folder>
+        <folder>src</folder>
+        <folder>tmpl</folder>
+    </files>
+    <scriptfile>script.install.php</scriptfile>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/mod_jchdashicons.ini</language>
+        <language tag="en-GB">en-GB/mod_jchdashicons.sys.ini</language>
+    </languages>
+
+    <!--<media destination="mod_jchdashicons" folder="media">
+        <folder>css</folder>
+    </media>-->
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="header_icon"
+                    type="text"
+                    label="MOD_JCHDASHICONS_HEADER_ICON_LABEL"
+                    default=""
+                    />
+                <field
+                    name="context"
+                    type="list"
+                    label="MOD_JCHDASHICONS_CONTEXT"
+                    >
+                    <option value="images">MOD_JCHDASHICONS_OPT_IMAGE_FEATURES</option>
+                    <option value="automatic">MOD_JCHDASHICONS_OPT_AUTOMATIC_SETTINGS</option>
+                    <option value="css">MOD_JCHDASHICONS_OPT_CSS_FEATURES</option>
+                    <option value="utility">MOD_JCHDASHICONS_OPT_UTILITY</option>
+                    <option value="notifications">MOD_JCHDASHICONS_OPT_NOTIFICATIONS</option>
+                    <option value="advanced">MOD_JCHDASHICONS_OPT_ADVANCED_FEATURES</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

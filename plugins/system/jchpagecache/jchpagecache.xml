@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="plugin" group="system" method="upgrade">
+    <name>plg_system_jchpagecache</name>
+    <author>Samuel Marshall</author>
+    <creationDate>2026-01-17</creationDate>
+    <copyright>Copyright (C) 2022 JCH Optimize Inc. All rights reserved</copyright>
+    <license>GNU/GPLv3 https://www.gnu.org/licenses/gpl-3.0.html</license>
+    <authorEmail>samuel@jch-optimize.net</authorEmail>
+    <authorUrl>https://www.jch-optimize.net</authorUrl>
+    <version>9.2.5</version>
+    <description>PLG_SYSTEM_JCHPAGECACHE_DESCRIPTION</description>
+    <namespace path="src">CodeAlfa\Plugin\System\JchPageCache</namespace>
+    <files>
+        <folder plugin="jchpagecache">src</folder>
+        <folder>services</folder>
+        <filename>index.html</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/plg_system_jchpagecache.ini</language>
+        <language tag="en-GB">language/en-GB/plg_system_jchpagecache.sys.ini</language>
+    </languages>
+</extension>

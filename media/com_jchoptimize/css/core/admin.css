@@ -1,0 +1,139 @@
+/**
+ * JCH Optimize - Performs several front-end optimizations for fast downloads
+ *
+ * @package   jchoptimize/core
+ * @author    Samuel Marshall <samuel@jch-optimize.net>
+ * @copyright Copyright (c) 2020 Samuel Marshall / JCH Optimize
+ * @license   GNU/GPLv3, or later. See LICENSE file
+ *
+ * If LICENSE file missing, see <http://www.gnu.org/licenses/>.
+ */
+
+
+/** Optimize Images **/
+#progressbar {
+    margin: 10px 20px 0;
+    width: calc(100% - 40px);
+    height: 30px;
+}
+
+#optimize-log {
+    border: 1px #CCC solid;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px 20px;
+    overflow-y: auto;
+    height: 300px;
+}
+
+#optimize-log li {
+    font-size: 11px;
+}
+
+#optimize-status {
+    padding: 7px;
+    font-size: 12px;
+    font-style: italic;
+    margin: 0 20px;
+}
+
+
+.collapsible h3 span {
+    margin-left: 10px;
+}
+
+.collapsible.collapse-open h3 span:before {
+    content: "\f151"
+}
+
+.collapsible.collapse-close h3 span:before {
+    content: "\f150"
+}
+
+.form-horizontal .control-label .spacer hr {
+    margin: 0 0 15px !important;
+}
+
+.admin-panel-block {
+    padding: 40px 30px;
+    border: solid 1px #d4d9d0;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+div.icons-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/** Checkboxes group **/
+
+.jch-checkboxes-grid-wrapper {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    justify-items: stretch;
+    width: fit-content;
+}
+
+.jch-checkboxes-grid-wrapper.columns-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.jch-checkboxes-grid-wrapper.columns-5 {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.jch-checkboxes-grid-wrapper.columns-6 {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.jch-checkboxes-grid-wrapper.columns-7 {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+/** Popovers **/
+
+.popover h4.list-header {
+    font-weight: 500;
+    margin: 0 0 1em 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+}
+
+.popover h4.list-header:before, .popover h4.list-header:after {
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 50%;
+    height: 1px;
+    content: '\a0';
+    background-color: #ccc;
+    margin-left: 20px;
+}
+
+.popover h4.list-header:before {
+    margin-left: -60%;
+    text-align: right;
+}
+
+.popover ul {
+    min-width: 200px;
+}
+
+.popover li {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.popover i {
+    margin: auto 0;
+}
+
+#modalCriticaljsconfigurehelper .modal-dialog {
+    max-width: 75% !important;
+}

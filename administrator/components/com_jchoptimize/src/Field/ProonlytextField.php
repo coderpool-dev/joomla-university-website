@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * JCH Optimize - Performs several front-end optimizations for fast downloads
+ *
+ *  @package   jchoptimize/core
+ *  @author    Samuel Marshall <samuel@jch-optimize.net>
+ *  @copyright Copyright (c) 2025 Samuel Marshall / JCH Optimize
+ *  @license   GNU/GPLv3, or later. See LICENSE file
+ *
+ *  If LICENSE file missing, see <http://www.gnu.org/licenses/>.
+ */
+
+namespace CodeAlfa\Component\JchOptimize\Administrator\Field;
+
+use JchOptimize\Core\Admin\AdminHelper;
+use Joomla\CMS\Form\Field\TextField;
+use Joomla\CMS\Form\FormHelper as JFormHelper;
+
+// phpcs:disable PSR1.Files.SideEffects
+defined('_JEXEC') or die;
+// phpcs:enable PSR1.Files.SideEffects
+
+JFormHelper::loadFieldClass('text');
+
+class ProonlytextField extends TextField
+{
+    protected $type = 'proonlytext';
+
+    protected function getInput(): string
+    {
+        if (!JCH_PRO) {
+            return AdminHelper::proOnlyField();
+        } else {
+            return parent::getInput();
+        }
+    }
+}
